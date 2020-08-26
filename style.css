@@ -1,0 +1,312 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-align: center;
+  max-width: 1000px;
+}
+
+main {
+  margin-bottom: 6em;
+}
+
+hr {
+  border-width: 0.3px;
+}
+
+.scoring {
+  background-color: lemonchiffon;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#questions-wrapper {
+  display: inline-block;
+}
+
+.question {
+  height: 2.7em;
+  margin-bottom: .5em;
+  font-size: 1.3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.question p {
+  margin: 0;
+  width: 18em;
+  line-height: 2.7em;
+  background-color: lemonchiffon;
+}
+
+.question label {
+  line-height: 2.7em;
+  width: 5em;
+}
+
+.question .yes {
+  color: #f83da4;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.question .no {
+  color: lightseagreen;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+  }
+  .question {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .question p {
+    width: 100%;
+    line-height: 2em;
+  }
+  .question label {
+    line-height: 2em;
+  }
+}
+
+#kan-wrapper {
+  position: relative;
+}
+
+#kan-wrapper a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kan .kan-example {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kan .kan-count {
+  border: 1px solid black;
+  margin: 0.1em;
+  padding: 0.5em;
+}
+
+.kan .kan-count span {
+  font-weight: bold;
+}
+
+.kan .tile {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.kan img {
+  width: 19px;
+  height: 26px;
+}
+
+.kan .yoko {
+  width: 26px;
+  height: 19px;
+}
+
+.kan .kakan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.kan .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.kan .plus {
+  width: 1.5em;
+  cursor: pointer;
+  border: 1px solid;
+  font-size: 1.3em;
+  background-color: pink;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.kan .zero {
+  margin: 2.5em 0;
+  cursor: pointer;
+  font-size: 0.5em;
+  border: 1px solid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media screen and (max-width: 550px) {
+  .kan-count {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.checklist {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.checklist label {
+  margin: 0 0.5em;
+}
+
+.oyaOrKo label {
+  font-size: 1.3em;
+  width: 7em;
+}
+
+.han {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 500px;
+  height: 10em;
+  margin: 0 auto;
+}
+
+.han label {
+  font-size: 1.3em;
+  width: 25%;
+  text-align: left;
+}
+
+.pointtables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pointtables .tableborder {
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.8em;
+  margin: 0.3em;
+}
+
+.pointtables .tableborder th {
+  width: 7em;
+  border: solid 1px #666;
+}
+
+.pointtables .tableborder td {
+  width: 7em;
+  border: solid 1px #666;
+}
+
+.pointtables .oya-points th {
+  background-color: pink;
+}
+
+.pointtables .ko-points th {
+  background-color: lightblue;
+}
+
+#result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  padding: 0.5em;
+  background-color: #f7c569;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#result span {
+  font-weight: bold;
+}
+
+#result #calculation {
+  width: 30%;
+  font-size: 1.2em;
+}
+
+#result #reset {
+  width: 15%;
+}
+
+.fa-arrow-alt-circle-up {
+  position: absolute;
+  bottom: -10;
+  right: 0;
+  z-index: 3;
+  color: #666;
+}
+
+.tweet {
+  display: inline-block;
+}
+
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */
