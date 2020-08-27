@@ -11,24 +11,23 @@ let pointmove = document.getElementById('ten-idou');
 let Y_N = document.querySelectorAll('.Y-N');
 for (i = 0; i < Y_N.length; i++){
   Y_N[i].addEventListener('change', function () {
-    if (document.getElementById('q1-yes').checked === true) {
-      q2.classList.remove('disabled');
-      q3.classList.add('disabled');
-      q4.classList.add('disabled');
-      q5.classList.add('disabled');
-    }
-    if (document.getElementById('q1-no').checked === true) {
-      q3.classList.remove('disabled');
-      q2.classList.add('disabled');
-    }
-    if (document.getElementById('q2-yes').checked === true) {
+    if (document.getElementById('q5-yes').checked === true) {
       if (han1.checked = true) {
         han1.disabled = true;
         document.getElementById('2han').checked = true;
         han_su = 2;
       }
     }
-    if (document.getElementById('q2-no').checked === true) {
+    if (document.getElementById('q4-no').checked === true) {
+      kan.classList.remove('disabled');
+    }
+    if (document.getElementById('q4-yes').checked === true) {
+      kan.classList.add('disabled');
+    }
+    if (document.getElementById('q3-no').checked === true) {
+      q4.classList.remove('disabled');
+      q5.classList.remove('disabled');
+      kan.classList.remove('disabled');
       han1.disabled = false;
     }
     if (document.getElementById('q3-yes').checked === true) {
@@ -39,24 +38,25 @@ for (i = 0; i < Y_N.length; i++){
       document.getElementById('2han').checked = true;
       document.getElementById('2han').checked = true;
     }
-    if (document.getElementById('q3-no').checked === true) {
-      q4.classList.remove('disabled');
-      q5.classList.remove('disabled');
-      kan.classList.remove('disabled');
+    if (document.getElementById('q2-no').checked === true) {
       han1.disabled = false;
     }
-    if (document.getElementById('q4-yes').checked === true) {
-      kan.classList.add('disabled');
-    }
-    if (document.getElementById('q4-no').checked === true) {
-      kan.classList.remove('disabled');
-    }
-    if (document.getElementById('q5-yes').checked === true) {
+    if (document.getElementById('q2-yes').checked === true) {
       if (han1.checked = true) {
         han1.disabled = true;
         document.getElementById('2han').checked = true;
         han_su = 2;
       }
+    }
+    if (document.getElementById('q1-no').checked === true) {
+      q3.classList.remove('disabled');
+      q2.classList.add('disabled');
+    }
+    if (document.getElementById('q1-yes').checked === true) {
+      q2.classList.remove('disabled');
+      q3.classList.add('disabled');
+      q4.classList.add('disabled');
+      q5.classList.add('disabled');
     }
   });
 }
