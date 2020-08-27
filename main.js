@@ -21,8 +21,11 @@ q1.addEventListener('change', function () {
 });
 q2.addEventListener('change', function () {
   if (document.getElementById('q2-yes').checked === true) {
-    document.getElementById('1han').disabled = true;
-    document.getElementById('2han').checked = true;
+    if (document.getElementById('1han').checked = true) {
+      document.getElementById('1han').disabled = true;
+      document.getElementById('2han').checked = true;
+      han_su = 2;
+    }
   }
   if (document.getElementById('q2-no').checked === true) {
     document.getElementById('1han').disabled = false;
@@ -113,6 +116,7 @@ document.getElementById('calculation').addEventListener('click', function () {
       }
     }
   }
+  document.getElementById('result_display').style.display = 'block';
 
   let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan2Count * 20 + minkan2Count * 10;
 
@@ -124,98 +128,98 @@ document.getElementById('calculation').addEventListener('click', function () {
     if (han_su == 1) {
       if (fu_su == 20) { alert('20符1翻は平和ツモのみです'); return; }
       if (fu_su == 25) { alert('25符は七対子のみです'); return; }
-      if (fu_su == 30) { point.innerHTML = '1500'; pointmove.innerHTML = '(500オール)' }
-      if (fu_su == 40) { point.innerHTML = '2000'; pointmove.innerHTML = '(700オール)' }
-      if (fu_su == 50) { point.innerHTML = '2400'; pointmove.innerHTML = '(800オール)' }
-      if (fu_su == 60) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)' }
-      if (fu_su == 70) { point.innerHTML = '3400'; pointmove.innerHTML = '(1200オール)' }
-      if (fu_su == 80) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)' }
-      if (fu_su == 90) { point.innerHTML = '4400'; pointmove.innerHTML = '(1500オール)' }
-      if (fu_su == 100) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)' }
-      if (fu_su == 110) { point.innerHTML = '5300'; pointmove.innerHTML = '(1800オール)' }
+      if (fu_su == 30) { point.innerHTML = '1500'; pointmove.innerHTML = '(500オール)'; }
+      if (fu_su == 40) { point.innerHTML = '2000'; pointmove.innerHTML = '(700オール)'; }
+      if (fu_su == 50) { point.innerHTML = '2400'; pointmove.innerHTML = '(800オール)'; }
+      if (fu_su == 60) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)'; }
+      if (fu_su == 70) { point.innerHTML = '3400'; pointmove.innerHTML = '(1200オール)'; }
+      if (fu_su == 80) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
+      if (fu_su == 90) { point.innerHTML = '4400'; pointmove.innerHTML = '(1500オール)'; }
+      if (fu_su == 100) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
+      if (fu_su == 110) { point.innerHTML = '5300'; pointmove.innerHTML = '(1800オール)'; }
     }
     if (han_su == 2) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(700オール)' }
+      if (fu_su == 20) { point.innerHTML = '2000'; pointmove.innerHTML = '(700オール)'; }
       if (fu_su == 25) { point.innerHTML = '2400'; pointmove.innerHTML = '' }
-      if (fu_su == 30) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)' }
-      if (fu_su == 40) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)' }
-      if (fu_su == 50) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)' }
-      if (fu_su == 60) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)' }
-      if (fu_su == 70) { point.innerHTML = '6800'; pointmove.innerHTML = '(2300オール)' }
-      if (fu_su == 80) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)' }
-      if (fu_su == 90) { point.innerHTML = '8700'; pointmove.innerHTML = '(2900オール)' }
-      if (fu_su == 100) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)' }
-      if (fu_su == 110) { point.innerHTML = '10600'; pointmove.innerHTML = '(3600オール)' }
+      if (fu_su == 30) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)'; }
+      if (fu_su == 40) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
+      if (fu_su == 50) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
+      if (fu_su == 60) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)'; }
+      if (fu_su == 70) { point.innerHTML = '6800'; pointmove.innerHTML = '(2300オール)'; }
+      if (fu_su == 80) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
+      if (fu_su == 90) { point.innerHTML = '8700'; pointmove.innerHTML = '(2900オール)'; }
+      if (fu_su == 100) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
+      if (fu_su == 110) { point.innerHTML = '10600'; pointmove.innerHTML = '(3600オール)'; }
     }
     if (han_su == 3) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(1300オール)' }
-      if (fu_su == 25) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)' }
-      if (fu_su == 30) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)' }
-      if (fu_su == 40) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)' }
-      if (fu_su == 50) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)' }
-      if (fu_su >= 60) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)' }
+      if (fu_su == 20) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
+      if (fu_su == 25) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
+      if (fu_su == 30) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)'; }
+      if (fu_su == 40) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
+      if (fu_su == 50) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
+      if (fu_su >= 60) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
     }
     if (han_su == 4) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(2600オール)' }
-      if (fu_su == 25) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)' }
-      if (fu_su >= 30) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)' }
+      if (fu_su == 20) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
+      if (fu_su == 25) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
+      if (fu_su >= 30) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
     }
 
-    if (han_su == 5) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)' }
-    if (han_su >= 6) { point.innerHTML = '18000'; pointmove.innerHTML = '(6000オール)' }
-    if (han_su >= 8) { point.innerHTML = '24000'; pointmove.innerHTML = '(8000オール)' }
-    if (han_su >= 11) { point.innerHTML = '36000'; pointmove.innerHTML = '(12000オール)' }
-    if (han_su >= 13) { point.innerHTML = '48000'; pointmove.innerHTML = '(16000オール)' }
+    if (han_su == 5) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
+    if (han_su >= 6) { point.innerHTML = '18000'; pointmove.innerHTML = '(6000オール)'; }
+    if (han_su >= 8) { point.innerHTML = '24000'; pointmove.innerHTML = '(8000オール)'; }
+    if (han_su >= 11) { point.innerHTML = '36000'; pointmove.innerHTML = '(12000オール)'; }
+    if (han_su >= 13) { point.innerHTML = '48000'; pointmove.innerHTML = '(16000オール)'; }
   }
 
   if (document.getElementById('ko').checked === true) {
     if (han_su == 1) {
       if (fu_su == 20) { alert('20符1翻は平和ツモのみです'); return; }
       if (fu_su == 25) { alert('25符は七対子のみです'); return; }
-      if (fu_su == 30) { point.innerHTML = '1000'; pointmove.innerHTML = '(300,500)' }
-      if (fu_su == 40) { point.innerHTML = '1300'; pointmove.innerHTML = '(400,700)' }
-      if (fu_su == 50) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)' }
-      if (fu_su == 60) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)' }
-      if (fu_su == 70) { point.innerHTML = '2300'; pointmove.innerHTML = '(600,1200)' }
-      if (fu_su == 80) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)' }
-      if (fu_su == 90) { point.innerHTML = '2900'; pointmove.innerHTML = '(800,1500)' }
-      if (fu_su == 100) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)' }
-      if (fu_su == 110) { point.innerHTML = '3600'; pointmove.innerHTML = '(900,1800)' }
+      if (fu_su == 30) { point.innerHTML = '1000'; pointmove.innerHTML = '(300,500)'; }
+      if (fu_su == 40) { point.innerHTML = '1300'; pointmove.innerHTML = '(400,700)'; }
+      if (fu_su == 50) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)'; }
+      if (fu_su == 60) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)'; }
+      if (fu_su == 70) { point.innerHTML = '2300'; pointmove.innerHTML = '(600,1200)'; }
+      if (fu_su == 80) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
+      if (fu_su == 90) { point.innerHTML = '2900'; pointmove.innerHTML = '(800,1500)'; }
+      if (fu_su == 100) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
+      if (fu_su == 110) { point.innerHTML = '3600'; pointmove.innerHTML = '(900,1800)'; }
     }
     if (han_su == 2) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(400,700)' }
-      if (fu_su == 25) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)' }
-      if (fu_su == 30) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)' }
-      if (fu_su == 40) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)' }
-      if (fu_su == 50) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)' }
-      if (fu_su == 60) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)' }
-      if (fu_su == 70) { point.innerHTML = '4500'; pointmove.innerHTML = '(1200,2300)' }
-      if (fu_su == 80) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)' }
-      if (fu_su == 90) { point.innerHTML = '5800'; pointmove.innerHTML = '(1500,2900)' }
-      if (fu_su == 100) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)' }
-      if (fu_su == 110) { point.innerHTML = '7100'; pointmove.innerHTML = '(1800,3600)' }
+      if (fu_su == 20) { point.innerHTML = '1300'; pointmove.innerHTML = '(400,700)'; }
+      if (fu_su == 25) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)'; }
+      if (fu_su == 30) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)'; }
+      if (fu_su == 40) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
+      if (fu_su == 50) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
+      if (fu_su == 60) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)'; }
+      if (fu_su == 70) { point.innerHTML = '4500'; pointmove.innerHTML = '(1200,2300)'; }
+      if (fu_su == 80) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
+      if (fu_su == 90) { point.innerHTML = '5800'; pointmove.innerHTML = '(1500,2900)'; }
+      if (fu_su == 100) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
+      if (fu_su == 110) { point.innerHTML = '7100'; pointmove.innerHTML = '(1800,3600)'; }
     }
     if (han_su == 3) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(700,1300)' }
-      if (fu_su == 25) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)' }
-      if (fu_su == 30) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)' }
-      if (fu_su == 40) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)' }
-      if (fu_su == 50) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)' }
-      if (fu_su == 60) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)' }
-      if (fu_su >= 70) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)' }
+      if (fu_su == 20) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
+      if (fu_su == 25) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
+      if (fu_su == 30) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)'; }
+      if (fu_su == 40) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
+      if (fu_su == 50) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
+      if (fu_su == 60) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)'; }
+      if (fu_su >= 70) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
     }
     if (han_su == 4) {
-      if (fu_su == 20) { point.innerHTML = ''; pointmove.innerHTML = '(1300,2600)' }
-      if (fu_su == 25) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)' }
-      if (fu_su == 30) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)' }
-      if (fu_su >= 40) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)' }
+      if (fu_su == 20) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
+      if (fu_su == 25) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
+      if (fu_su == 30) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)'; }
+      if (fu_su >= 40) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
     }
 
-    if (han_su == 5) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)' }
-    if (han_su >= 6) { point.innerHTML = '12000'; pointmove.innerHTML = '(3000,6000)' }
-    if (han_su >= 8) { point.innerHTML = '16000'; pointmove.innerHTML = '(4000,8000)' }
-    if (han_su >= 11) { point.innerHTML = '24000'; pointmove.innerHTML = '(6000,12000)' }
-    if (han_su >= 13) { point.innerHTML = '32000'; pointmove.innerHTML = '(8000,16000)' }
+    if (han_su == 5) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
+    if (han_su >= 6) { point.innerHTML = '12000'; pointmove.innerHTML = '(3000,6000)'; }
+    if (han_su >= 8) { point.innerHTML = '16000'; pointmove.innerHTML = '(4000,8000)'; }
+    if (han_su >= 11) { point.innerHTML = '24000'; pointmove.innerHTML = '(6000,12000)'; }
+    if (han_su >= 13) { point.innerHTML = '32000'; pointmove.innerHTML = '(8000,16000)'; }
   }
 })
 
@@ -245,7 +249,4 @@ document.getElementById('reset').addEventListener('click', function () {
   q3.classList.add('disabled');
   q4.classList.add('disabled');
   q5.classList.add('disabled');
-
-  // 計算ボタンをアクティブ化
-  // document.getElementById('calculation').classList.remove('disabled')
 });
