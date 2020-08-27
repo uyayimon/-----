@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
@@ -13,9 +14,21 @@ hr {
   border-width: 0.3px;
 }
 
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+label {
+  font-size: 1.3em;
+}
+
 .chapter {
   background-color: lemonchiffon;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 
 .choices {
@@ -33,10 +46,6 @@ header h1 {
   margin: 0;
 }
 
-.oyaOrKo label {
-  font-size: 1.3em;
-}
-
 .han {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,17 +54,12 @@ header h1 {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   max-width: 300px;
   height: 10em;
   margin: 0 auto;
 }
 
 .han label {
-  font-size: 1.3em;
-  width: auto;
   text-align: left;
 }
 
@@ -120,9 +124,6 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .kan .kan-count {
@@ -170,7 +171,7 @@ header h1 {
           justify-content: space-evenly;
 }
 
-.kan .plus {
+.kan .count .plus {
   width: 1.5em;
   cursor: pointer;
   border: 1px solid;
@@ -182,7 +183,7 @@ header h1 {
           user-select: none;
 }
 
-.kan .zero {
+.kan .count .zero {
   margin: 2.5em 0;
   cursor: pointer;
   font-size: 0.5em;
@@ -255,11 +256,7 @@ header h1 {
 
 #result #calculation {
   width: 30%;
-  font-size: 1.2em;
-}
-
-#result #reset {
-  width: 15%;
+  font-size: 1.1em;
 }
 
 .fa-arrow-alt-circle-up {
@@ -322,6 +319,8 @@ header h1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .kan-count > div {
     width: 50%;
