@@ -3,28 +3,65 @@ html {
 }
 
 body {
+  margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-}
-
-main {
-  margin-bottom: 6em;
+  margin-bottom: 10em;
 }
 
 hr {
   border-width: 0.3px;
 }
 
-.scoring {
+.chapter {
   background-color: lemonchiffon;
+  margin-bottom: 0;
+}
+
+.choices {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.choices label {
+  margin: 0 0.5em;
 }
 
 header h1 {
   margin: 0;
 }
 
+.oyaOrKo label {
+  font-size: 1.3em;
+}
+
+.han {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  height: 10em;
+  margin: 0 auto;
+}
+
+.han label {
+  font-size: 1.3em;
+  width: auto;
+  text-align: left;
+}
+
 #questions-wrapper {
   display: inline-block;
+  margin: 2em auto;
 }
 
 .question {
@@ -64,36 +101,8 @@ header h1 {
           user-select: none;
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 0.9em;
-  }
-  .question {
-    height: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .question p {
-    width: 100%;
-    line-height: 2em;
-  }
-  .question label {
-    line-height: 2em;
-  }
-}
-
-#kan-wrapper {
-  position: relative;
-}
-
-#kan-wrapper a {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-decoration: none;
-  color: inherit;
+.skip {
+  float: right;
 }
 
 .kan .kan-example {
@@ -102,6 +111,15 @@ header h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kan .kan-example > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -138,9 +156,9 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .kan .count {
@@ -173,59 +191,6 @@ header h1 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-@media screen and (max-width: 550px) {
-  .kan-count {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-.checklist {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.checklist label {
-  margin: 0 0.5em;
-}
-
-.oyaOrKo label {
-  font-size: 1.3em;
-  width: 7em;
-}
-
-.han {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 500px;
-  height: 10em;
-  margin: 0 auto;
-}
-
-.han label {
-  font-size: 1.3em;
-  width: 25%;
-  text-align: left;
 }
 
 .pointtables {
@@ -280,6 +245,10 @@ header h1 {
   z-index: 1;
 }
 
+#result #result_display {
+  font-size: 1.2em;
+}
+
 #result span {
   font-weight: bold;
 }
@@ -295,10 +264,15 @@ header h1 {
 
 .fa-arrow-alt-circle-up {
   position: absolute;
-  bottom: -10;
+  bottom: 1;
   right: 0;
   z-index: 3;
   color: #666;
+  opacity: 0.7;
+}
+
+.fa-arrow-alt-circle-up:hover {
+  opacity: 1;
 }
 
 .tweet {
@@ -308,5 +282,49 @@ header h1 {
 .disabled {
   opacity: 0.2;
   pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  #questions-wrapper {
+    margin-bottom: 0;
+  }
+  .question {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .question p {
+    width: 100%;
+    line-height: 2em;
+  }
+  .question label {
+    line-height: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .kan-example > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .kan-count {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .kan-count > div {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
