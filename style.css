@@ -4,7 +4,8 @@ html {
 }
 
 body {
-  width: 100%;
+  font-family: '游ゴシック体', 'Yu Gothic', sans-serif;
+  font-weight: 500;
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
@@ -24,8 +25,21 @@ hr {
 }
 
 label {
-  font-size: 1.3em;
+  display: inline-block;
   cursor: pointer;
+  border: 1px solid #666;
+  border-radius: 0.5em;
+  width: 4em;
+  font-size: 1.2em;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  background-color: pink;
+  color: #ffffff;
 }
 
 .chapter {
@@ -42,35 +56,20 @@ label {
 }
 
 .choices label {
-  margin: 0 0.5em;
+  margin: 0.1em 0.2em;
 }
 
 header h1 {
   margin: 0;
 }
 
-.han {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-/*チェックは見えなくする*/
-.hidden_box {
-  text-align: right;
-}
-
-.hidden_box #over5label {
+#over5label {
+  font-size: 1em;
   opacity: 0.7;
   cursor: pointer;
 }
 
-.hidden_box #over5label:hover {
+#over5label:hover {
   opacity: 1;
 }
 
@@ -104,9 +103,9 @@ header h1 {
 }
 
 .question {
-  height: 2.7em;
-  margin-bottom: .5em;
-  font-size: 1.3em;
+  height: 2em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,12 +114,12 @@ header h1 {
 .question p {
   margin: 0;
   width: 18em;
-  line-height: 2.7em;
+  line-height: 2em;
   background-color: lemonchiffon;
 }
 
-.question input {
-  width: 2.5em;
+.question .Y-N {
+  line-height: 2em;
 }
 
 .question .yes {
@@ -137,6 +136,14 @@ header h1 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.question input[type=radio]:checked + label.yes {
+  background-color: #f83da4;
+}
+
+.question input[type=radio]:checked + label.no {
+  background-color: lightseagreen;
 }
 
 .skip {
@@ -166,8 +173,16 @@ header h1 {
   padding: 0.5em;
 }
 
+.kan .kan-count p {
+  margin: 0;
+}
+
 .kan .kan-count span {
   font-weight: bold;
+}
+
+.kan .kan-count .count-value {
+  font-size: 1.2em;
 }
 
 .kan .tile {
@@ -203,9 +218,13 @@ header h1 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.kan .count .plus {
+.kan .plus {
+  margin: 0;
   width: 1.5em;
   cursor: pointer;
   border: 1px solid;
@@ -217,9 +236,10 @@ header h1 {
           user-select: none;
 }
 
-.kan .count .zero {
+.kan .zero {
+  margin: 0;
   cursor: pointer;
-  font-size: 0.5em;
+  font-size: 0.8em;
   border: 1px solid;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -265,7 +285,7 @@ header h1 {
 
 #result {
   width: 100%;
-  padding: 0.5em;
+  padding: 0.4em;
   background-color: #f7c569;
   position: fixed;
   bottom: 0;
@@ -275,7 +295,6 @@ header h1 {
 
 #result #result_display {
   display: none;
-  margin: 1em;
 }
 
 #result button {
@@ -284,12 +303,16 @@ header h1 {
 
 #result #calculation {
   cursor: pointer;
-  height: 4em;
+  height: 3em;
   width: 30%;
   font-size: 1.1em;
 }
 
-#result #ten-result, #result #ten-idou {
+#result #reset {
+  height: 3em;
+}
+
+#result #ten-result {
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -318,17 +341,12 @@ header h1 {
   body {
     font-size: 1.3em;
   }
-  h1, h2 {
-    font-size: 1.2em;
-  }
   header {
-    font-size: 1em;
+    width: 100%;
+    font-size: 0.9em;
   }
   p {
     margin: 0;
-  }
-  #over5label {
-    font-size: 1em;
   }
   .question {
     height: auto;
@@ -339,10 +357,9 @@ header h1 {
   }
   .question p {
     width: 100%;
-    line-height: 2em;
   }
-  .skip {
-    font-size: 1em;
+  #kan-wrapper > p, #list > p {
+    font-size: 0.8em;
   }
   .kan-example > div {
     -webkit-box-orient: vertical;

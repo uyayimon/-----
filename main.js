@@ -9,21 +9,10 @@ let pointmove = document.getElementById('ten-idou');
 
 // 選択肢による項目のアクティブ・パッシブ化
 let Y_N = document.querySelectorAll('.Y-N');
-for (i = 0; i < Y_N.length; i++){
+for (i = 0; i < Y_N.length; i++) {
   Y_N[i].addEventListener('change', function () {
-    if (document.getElementById('q5-yes').checked === true) {
-      if (han1.checked = true) {
-        han1.disabled = true;
-        document.getElementById('2han').checked = true;
-        han_su = 2;
-      }
-    }
-    if (document.getElementById('q4-no').checked === true) {
-      kan.classList.remove('disabled');
-    }
-    if (document.getElementById('q4-yes').checked === true) {
-      kan.classList.add('disabled');
-    }
+    // if (document.getElementById('q5-yes').checked === true) {
+    // }
     if (document.getElementById('q3-no').checked === true) {
       q4.classList.remove('disabled');
       q5.classList.remove('disabled');
@@ -33,21 +22,12 @@ for (i = 0; i < Y_N.length; i++){
     if (document.getElementById('q3-yes').checked === true) {
       q4.classList.add('disabled');
       q5.classList.add('disabled');
-      kan.classList.add('disabled');
-      han1.disabled = true;
-      document.getElementById('2han').checked = true;
-      document.getElementById('2han').checked = true;
     }
     if (document.getElementById('q2-no').checked === true) {
       han1.disabled = false;
     }
-    if (document.getElementById('q2-yes').checked === true) {
-      if (han1.checked = true) {
-        han1.disabled = true;
-        document.getElementById('2han').checked = true;
-        han_su = 2;
-      }
-    }
+    // if (document.getElementById('q2-yes').checked === true) {
+    // }
     if (document.getElementById('q1-no').checked === true) {
       q3.classList.remove('disabled');
       q2.classList.add('disabled');
@@ -101,7 +81,8 @@ for (i = 0; i < han.length; i++) {
   })
 }
 
-// 得点計算
+// 得点計算と表示
+//  1.符数取得
 document.getElementById('calculation').addEventListener('click', function () {
   if (document.getElementById('q1-yes').checked === true) {
     if (document.getElementById('q2-yes').checked === true) { fu_su = 40; }
@@ -121,11 +102,11 @@ document.getElementById('calculation').addEventListener('click', function () {
       }
     }
   }
-  document.getElementById('result_display').style.display = 'block';
 
-  let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan2Count * 20 + minkan2Count * 10;
+//  2.カンによる符をカウント
+  let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan1Count * 20 + minkan2Count * 10;
 
-  if (document.getElementById('q3-yes').checked === true || document.getElementById('q4-yes').checked === true){
+  if (document.getElementById('q3-yes').checked === true || document.getElementById('q4-yes').checked === true) {
     kan_fu = 0;
     fu_su += kan_fu;
   }
@@ -135,103 +116,106 @@ document.getElementById('calculation').addEventListener('click', function () {
   fu_result.innerHTML = fu_su;
   han_result.innerHTML = han_su;
 
+//  3.符数と翻数に応じた結果表示
   if (document.getElementById('oya').checked === true) {
     if (han_su == 1) {
       if (fu_su == 20) { alert('20符1翻のアガりはありません'); return; }
       if (fu_su == 25) { alert('25符1翻のアガりはありません'); return; }
-      if (fu_su == 30) { point.innerHTML = '1500'; pointmove.innerHTML = '(500オール)'; }
-      if (fu_su == 40) { point.innerHTML = '2000'; pointmove.innerHTML = '(700オール)'; }
-      if (fu_su == 50) { point.innerHTML = '2400'; pointmove.innerHTML = '(800オール)'; }
-      if (fu_su == 60) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)'; }
-      if (fu_su == 70) { point.innerHTML = '3400'; pointmove.innerHTML = '(1200オール)'; }
-      if (fu_su == 80) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
-      if (fu_su == 90) { point.innerHTML = '4400'; pointmove.innerHTML = '(1500オール)'; }
-      if (fu_su == 100) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
-      if (fu_su == 110) { point.innerHTML = '5300'; pointmove.innerHTML = '(1800オール)'; }
+      if (fu_su == 30) { point.innerHTML = '1500'; pointmove.innerHTML = 'ツモアガりなら500オール'; }
+      if (fu_su == 40) { point.innerHTML = '2000'; pointmove.innerHTML = 'ツモアガりなら700オール'; }
+      if (fu_su == 50) { point.innerHTML = '2400'; pointmove.innerHTML = 'ツモアガりなら800オール'; }
+      if (fu_su == 60) { point.innerHTML = '2900'; pointmove.innerHTML = 'ツモアガりなら1000オール'; }
+      if (fu_su == 70) { point.innerHTML = '3400'; pointmove.innerHTML = 'ツモアガりなら1200オール'; }
+      if (fu_su == 80) { point.innerHTML = '3900'; pointmove.innerHTML = 'ツモアガりなら1300オール'; }
+      if (fu_su == 90) { point.innerHTML = '4400'; pointmove.innerHTML = 'ツモアガりなら1500オール'; }
+      if (fu_su == 100) { point.innerHTML = '4800'; pointmove.innerHTML = 'ツモアガりなら1600オール'; }
+      if (fu_su == 110) { point.innerHTML = '5300'; pointmove.innerHTML = 'ツモアガりなら1800オール'; }
     }
     if (han_su == 2) {
-      if (fu_su == 20) { point.innerHTML = '2000'; pointmove.innerHTML = '(700オール)'; }
+      if (fu_su == 20) { point.innerHTML = '2000'; pointmove.innerHTML = '700オール'; }
       if (fu_su == 25) { point.innerHTML = '2400'; pointmove.innerHTML = '' }
-      if (fu_su == 30) { point.innerHTML = '2900'; pointmove.innerHTML = '(1000オール)'; }
-      if (fu_su == 40) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
-      if (fu_su == 50) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
-      if (fu_su == 60) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)'; }
-      if (fu_su == 70) { point.innerHTML = '6800'; pointmove.innerHTML = '(2300オール)'; }
-      if (fu_su == 80) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
-      if (fu_su == 90) { point.innerHTML = '8700'; pointmove.innerHTML = '(2900オール)'; }
-      if (fu_su == 100) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
-      if (fu_su == 110) { point.innerHTML = '10600'; pointmove.innerHTML = '(3600オール)'; }
+      if (fu_su == 30) { point.innerHTML = '2900'; pointmove.innerHTML = 'ツモアガりなら1000オール'; }
+      if (fu_su == 40) { point.innerHTML = '3900'; pointmove.innerHTML = 'ツモアガりなら1300オール'; }
+      if (fu_su == 50) { point.innerHTML = '4800'; pointmove.innerHTML = 'ツモアガりなら1600オール'; }
+      if (fu_su == 60) { point.innerHTML = '5800'; pointmove.innerHTML = 'ツモアガりなら2000オール'; }
+      if (fu_su == 70) { point.innerHTML = '6800'; pointmove.innerHTML = 'ツモアガりなら2300オール'; }
+      if (fu_su == 80) { point.innerHTML = '7700'; pointmove.innerHTML = 'ツモアガりなら2600オール'; }
+      if (fu_su == 90) { point.innerHTML = '8700'; pointmove.innerHTML = 'ツモアガりなら2900オール'; }
+      if (fu_su == 100) { point.innerHTML = '9600'; pointmove.innerHTML = 'ツモアガりなら3200オール'; }
+      if (fu_su == 110) { point.innerHTML = '10600'; pointmove.innerHTML = 'ツモアガりなら3600オール'; }
     }
     if (han_su == 3) {
-      if (fu_su == 20) { point.innerHTML = '3900'; pointmove.innerHTML = '(1300オール)'; }
-      if (fu_su == 25) { point.innerHTML = '4800'; pointmove.innerHTML = '(1600オール)'; }
-      if (fu_su == 30) { point.innerHTML = '5800'; pointmove.innerHTML = '(2000オール)'; }
-      if (fu_su == 40) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
-      if (fu_su == 50) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
-      if (fu_su >= 60) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
+      if (fu_su == 20) { point.innerHTML = '3900'; pointmove.innerHTML = '1300オール'; }
+      if (fu_su == 25) { point.innerHTML = '4800'; pointmove.innerHTML = 'ツモアガりなら1600オール'; }
+      if (fu_su == 30) { point.innerHTML = '5800'; pointmove.innerHTML = 'ツモアガりなら2000オール'; }
+      if (fu_su == 40) { point.innerHTML = '7700'; pointmove.innerHTML = 'ツモアガりなら2600オール'; }
+      if (fu_su == 50) { point.innerHTML = '9600'; pointmove.innerHTML = 'ツモアガりなら3200オール'; }
+      if (fu_su >= 60) { point.innerHTML = '12000'; pointmove.innerHTML = 'ツモアガりなら4000オール'; }
     }
     if (han_su == 4) {
-      if (fu_su == 20) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
-      if (fu_su == 25) { point.innerHTML = '9600'; pointmove.innerHTML = '(3200オール)'; }
-      if (fu_su >= 30) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
+      if (fu_su == 20) { point.innerHTML = '7700'; pointmove.innerHTML = '2600オール'; }
+      if (fu_su == 25) { point.innerHTML = '9600'; pointmove.innerHTML = 'ツモアガりなら3200オール'; }
+      if (fu_su >= 30) { point.innerHTML = '12000'; pointmove.innerHTML = 'ツモアガりなら4000オール'; }
     }
 
-    if (han_su == 5) { point.innerHTML = '12000'; pointmove.innerHTML = '(4000オール)'; }
-    if (han_su >= 6) { point.innerHTML = '18000'; pointmove.innerHTML = '(6000オール)'; }
-    if (han_su >= 8) { point.innerHTML = '24000'; pointmove.innerHTML = '(8000オール)'; }
-    if (han_su >= 11) { point.innerHTML = '36000'; pointmove.innerHTML = '(12000オール)'; }
-    if (han_su >= 13) { point.innerHTML = '48000'; pointmove.innerHTML = '(16000オール)'; }
+    if (han_su == 5) { point.innerHTML = '12000'; pointmove.innerHTML = 'ツモアガりなら4000オール'; }
+    if (han_su >= 6) { point.innerHTML = '18000'; pointmove.innerHTML = 'ツモアガりなら6000オール'; }
+    if (han_su >= 8) { point.innerHTML = '24000'; pointmove.innerHTML = 'ツモアガりなら8000オール'; }
+    if (han_su >= 11) { point.innerHTML = '36000'; pointmove.innerHTML = 'ツモアガりなら12000オール'; }
+    if (han_su >= 13) { point.innerHTML = '48000'; pointmove.innerHTML = 'ツモアガりなら16000オール'; }
   }
-
   if (document.getElementById('ko').checked === true) {
     if (han_su == 1) {
       if (fu_su == 20) { alert('20符1翻のアガりはありません'); return; }
       if (fu_su == 25) { alert('25符1翻のアガりはありません'); return; }
-      if (fu_su == 30) { point.innerHTML = '1000'; pointmove.innerHTML = '(300,500)'; }
-      if (fu_su == 40) { point.innerHTML = '1300'; pointmove.innerHTML = '(400,700)'; }
-      if (fu_su == 50) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)'; }
-      if (fu_su == 60) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)'; }
-      if (fu_su == 70) { point.innerHTML = '2300'; pointmove.innerHTML = '(600,1200)'; }
-      if (fu_su == 80) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
-      if (fu_su == 90) { point.innerHTML = '2900'; pointmove.innerHTML = '(800,1500)'; }
-      if (fu_su == 100) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
-      if (fu_su == 110) { point.innerHTML = '3600'; pointmove.innerHTML = '(900,1800)'; }
+      if (fu_su == 30) { point.innerHTML = '1000'; pointmove.innerHTML = 'ツモアガりなら300,500'; }
+      if (fu_su == 40) { point.innerHTML = '1300'; pointmove.innerHTML = 'ツモアガりなら400,700'; }
+      if (fu_su == 50) { point.innerHTML = '1600'; pointmove.innerHTML = 'ツモアガりなら400,800'; }
+      if (fu_su == 60) { point.innerHTML = '2000'; pointmove.innerHTML = 'ツモアガりなら500,1000'; }
+      if (fu_su == 70) { point.innerHTML = '2300'; pointmove.innerHTML = 'ツモアガりなら600,1200'; }
+      if (fu_su == 80) { point.innerHTML = '2600'; pointmove.innerHTML = 'ツモアガりなら700,1300'; }
+      if (fu_su == 90) { point.innerHTML = '2900'; pointmove.innerHTML = 'ツモアガりなら800,1500'; }
+      if (fu_su == 100) { point.innerHTML = '3200'; pointmove.innerHTML = 'ツモアガりなら800,1600'; }
+      if (fu_su == 110) { point.innerHTML = '3600'; pointmove.innerHTML = 'ツモアガりなら900,1800'; }
     }
     if (han_su == 2) {
-      if (fu_su == 20) { point.innerHTML = '1300'; pointmove.innerHTML = '(400,700)'; }
-      if (fu_su == 25) { point.innerHTML = '1600'; pointmove.innerHTML = '(400,800)'; }
-      if (fu_su == 30) { point.innerHTML = '2000'; pointmove.innerHTML = '(500,1000)'; }
-      if (fu_su == 40) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
-      if (fu_su == 50) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
-      if (fu_su == 60) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)'; }
-      if (fu_su == 70) { point.innerHTML = '4500'; pointmove.innerHTML = '(1200,2300)'; }
-      if (fu_su == 80) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
-      if (fu_su == 90) { point.innerHTML = '5800'; pointmove.innerHTML = '(1500,2900)'; }
-      if (fu_su == 100) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
-      if (fu_su == 110) { point.innerHTML = '7100'; pointmove.innerHTML = '(1800,3600)'; }
+      if (fu_su == 20) { point.innerHTML = '1300'; pointmove.innerHTML = '400,700'; }
+      if (fu_su == 25) { point.innerHTML = '1600'; pointmove.innerHTML = ''; }
+      if (fu_su == 30) { point.innerHTML = '2000'; pointmove.innerHTML = 'ツモアガりなら500,1000'; }
+      if (fu_su == 40) { point.innerHTML = '2600'; pointmove.innerHTML = 'ツモアガりなら700,1300'; }
+      if (fu_su == 50) { point.innerHTML = '3200'; pointmove.innerHTML = 'ツモアガりなら800,1600'; }
+      if (fu_su == 60) { point.innerHTML = '3900'; pointmove.innerHTML = 'ツモアガりなら1000,2000'; }
+      if (fu_su == 70) { point.innerHTML = '4500'; pointmove.innerHTML = 'ツモアガりなら1200,2300'; }
+      if (fu_su == 80) { point.innerHTML = '5200'; pointmove.innerHTML = 'ツモアガりなら1300,2600'; }
+      if (fu_su == 90) { point.innerHTML = '5800'; pointmove.innerHTML = 'ツモアガりなら1500,2900'; }
+      if (fu_su == 100) { point.innerHTML = '6400'; pointmove.innerHTML = 'ツモアガりなら1600,3200'; }
+      if (fu_su == 110) { point.innerHTML = '7100'; pointmove.innerHTML = 'ツモアガりなら1800,3600'; }
     }
     if (han_su == 3) {
-      if (fu_su == 20) { point.innerHTML = '2600'; pointmove.innerHTML = '(700,1300)'; }
-      if (fu_su == 25) { point.innerHTML = '3200'; pointmove.innerHTML = '(800,1600)'; }
-      if (fu_su == 30) { point.innerHTML = '3900'; pointmove.innerHTML = '(1000,2000)'; }
-      if (fu_su == 40) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
-      if (fu_su == 50) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
-      if (fu_su == 60) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)'; }
-      if (fu_su >= 70) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
+      if (fu_su == 20) { point.innerHTML = '2600'; pointmove.innerHTML = '700,1300'; }
+      if (fu_su == 25) { point.innerHTML = '3200'; pointmove.innerHTML = 'ツモアガりなら800,1600'; }
+      if (fu_su == 30) { point.innerHTML = '3900'; pointmove.innerHTML = 'ツモアガりなら1000,2000'; }
+      if (fu_su == 40) { point.innerHTML = '5200'; pointmove.innerHTML = 'ツモアガりなら1300,2600'; }
+      if (fu_su == 50) { point.innerHTML = '6400'; pointmove.innerHTML = 'ツモアガりなら1600,3200'; }
+      if (fu_su == 60) { point.innerHTML = '7700'; pointmove.innerHTML = 'ツモアガりなら2000,3900'; }
+      if (fu_su >= 70) { point.innerHTML = '8000'; pointmove.innerHTML = 'ツモアガりなら2000,4000'; }
     }
     if (han_su == 4) {
-      if (fu_su == 20) { point.innerHTML = '5200'; pointmove.innerHTML = '(1300,2600)'; }
-      if (fu_su == 25) { point.innerHTML = '6400'; pointmove.innerHTML = '(1600,3200)'; }
-      if (fu_su == 30) { point.innerHTML = '7700'; pointmove.innerHTML = '(2000,3900)'; }
-      if (fu_su >= 40) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
+      if (fu_su == 20) { point.innerHTML = '5200'; pointmove.innerHTML = '1300,2600'; }
+      if (fu_su == 25) { point.innerHTML = '6400'; pointmove.innerHTML = 'ツモアガりなら1600,3200'; }
+      if (fu_su == 30) { point.innerHTML = '7700'; pointmove.innerHTML = 'ツモアガりなら2000,3900'; }
+      if (fu_su >= 40) { point.innerHTML = '8000'; pointmove.innerHTML = 'ツモアガりなら2000,4000'; }
     }
 
-    if (han_su == 5) { point.innerHTML = '8000'; pointmove.innerHTML = '(2000,4000)'; }
-    if (han_su >= 6) { point.innerHTML = '12000'; pointmove.innerHTML = '(3000,6000)'; }
-    if (han_su >= 8) { point.innerHTML = '16000'; pointmove.innerHTML = '(4000,8000)'; }
-    if (han_su >= 11) { point.innerHTML = '24000'; pointmove.innerHTML = '(6000,12000)'; }
-    if (han_su >= 13) { point.innerHTML = '32000'; pointmove.innerHTML = '(8000,16000)'; }
+    if (han_su == 5) { point.innerHTML = '8000'; pointmove.innerHTML = 'ツモアガりなら2000,4000'; }
+    if (han_su >= 6) { point.innerHTML = '12000'; pointmove.innerHTML = 'ツモアガりなら3000,6000'; }
+    if (han_su >= 8) { point.innerHTML = '16000'; pointmove.innerHTML = 'ツモアガりなら4000,8000'; }
+    if (han_su >= 11) { point.innerHTML = '24000'; pointmove.innerHTML = 'ツモアガりなら6000,12000'; }
+    if (han_su >= 13) { point.innerHTML = '32000'; pointmove.innerHTML = 'ツモアガりなら8000,16000'; }
   }
+
+  document.getElementById('result_display').style.display = 'block';
+
 })
 
 // リセット

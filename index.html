@@ -16,9 +16,9 @@
   <main>
     <h2 class="chapter">おなたは親？子？</h2>
     <section id="oyaOrKo-wrapper">
-      <div class="choices oyaOrKo">
-        <label class="oya"><input type="radio" name="oya" value="1.5" id="oya">親</label>
-        <label class="ko"><input type="radio" name="oya" value="1" id="ko" checked>子</label>
+      <div class="choices">
+        <input type="radio" name="oyaKo" value="1.5" id="oya"><label for="oya">親</label>
+        <input type="radio" name="oyaKo" value="1" id="ko" checked><label for="ko">子</label>
       </div>
     </section>
 
@@ -26,24 +26,24 @@
     <section id="han-wrapper">
       <div class="choices">
         <div class="han">
-          <label><input type="radio" name="han" id="1han" value="1" checked> 1飜</label>
-          <label><input type="radio" name="han" id="2han" value="2"> 2飜</label>
-          <label><input type="radio" name="han" id="3han" value="3"> 3飜</label>
-          <label><input type="radio" name="han" id="4han" value="4"> 4飜</label>
-        </div>
-        <div class="hidden_box">
-          <label for="label1" id="over5label">▼ 5翻以上</label>
-          <input type="checkbox" id="label1" />
-          <div class="hidden_show">
-            <label><input type="radio" name="han" id="5han" value="5"> 5飜</label>
-            <label><input type="radio" name="han" id="6han" value="6"> 6飜</label>
-            <label><input type="radio" name="han" id="7han" value="7"> 7飜</label>
-            <label><input type="radio" name="han" id="8han" value="8"> 8飜</label>
-            <label><input type="radio" name="han" id="9han" value="9"> 9飜</label>
-            <label><input type="radio" name="han" id="10han" value="10"> 10飜</label>
-            <label><input type="radio" name="han" id="11han" value="11"> 11飜</label>
-            <label><input type="radio" name="han" id="12han" value="12"> 12飜</label>
-            <label><input type="radio" name="han" id="13han" value="13"> 13飜以上</label>
+          <input type="radio" name="han" id="1han" value="1" checked><label for="1han">1飜</label>
+          <input type="radio" name="han" id="2han" value="2"><label for="2han">2飜</label>
+          <input type="radio" name="han" id="3han" value="3"><label for="3han">3飜</label>
+          <input type="radio" name="han" id="4han" value="4"><label for="4han">4飜</label>
+          <label for="label1" id="over5label">5翻～ ▼</label>
+          <div class="hidden_box">
+            <input type="checkbox" id="label1" />
+            <div class="hidden_show">
+              <input type="radio" name="han" id="5han" value="5"><label for="5han">5飜</label>
+              <input type="radio" name="han" id="6han" value="6"><label for="6han">6飜</label>
+              <input type="radio" name="han" id="7han" value="7"><label for="7han">7飜</label>
+              <input type="radio" name="han" id="8han" value="8"><label for="8han">8飜</label>
+              <input type="radio" name="han" id="9han" value="9"><label for="9han">9飜</label>
+              <input type="radio" name="han" id="10han" value="10"><label for="10han">10飜</label>
+              <input type="radio" name="han" id="11han" value="11"><label for="11han">11飜</label>
+              <input type="radio" name="han" id="12han" value="12"><label for="12han">12飜</label>
+              <input type="radio" name="han" id="13han" value="13"><label for="13han">13飜以上</label>
+            </div>
           </div>
         </div>
       </div>
@@ -54,49 +54,49 @@
       <div class="question" id="q1">
         <p>ポンかチーしてる？</p>
         <div class="Y-N">
-          <label class="yes"><input type="radio" name="question1 radio" id="q1-yes">YES</label>
-          <label class="no"><input type="radio" name="question1 radio" id="q1-no">NO</label>
+          <input type="radio" name="question1" id="q1-yes"><label for="q1-yes" class="yes">YES</label>
+          <input type="radio" name="question1" id="q1-no"><label for="q1-no" class="no">NO</label>
         </div>
       </div>
       <div class="question disabled" id="q2">
         <p>アガった役は対々和や三暗刻？</p>
         <div class="Y-N">
-          <label class="yes"><input type="radio" name="question2 radio" id="q2-yes" value="40">YES</label>
-          <label class="no"><input type="radio" name="question2 radio" id="q2-no" value="30">NO</label>
+          <input type="radio" name="question2" id="q2-yes" value="40"><label for="q2-yes" class="yes">YES</label>
+          <input type="radio" name="question2" id="q2-no" value="30"><label for="q2-no" class="no">NO</label>
         </div>
       </div>
       <div class="question disabled" id="q3">
         <p>アガった役は七対子？</p>
         <div class="Y-N">
-          <label class="yes"><input type="radio" name="question3" id="q3-yes" value="25">YES</label>
-          <label class="no"><input type="radio" name="question3" id="q3-no">NO</label>
+          <input type="radio" name="question3" id="q3-yes" value="25"><label for="q3-yes" class="yes">YES</label>
+          <input type="radio" name="question3" id="q3-no"><label for="q3-no" class="no">NO</label>
         </div>
       </div>
       <div class="question disabled" id="q4">
         <p>アガった役は平和？</p>
         <div class="Y-N">
-          <label class="yes"><input type="radio" name="question4" id="q4-yes">YES</label>
-          <label class="no"><input type="radio" name="question4" id="q4-no">NO</label>
+          <input type="radio" name="question4" id="q4-yes"><label for="q4-yes" class="yes">YES</label>
+          <input type="radio" name="question4" id="q4-no"><label for="q4-no" class="no">NO</label>
         </div>
       </div>
       <div class="question disabled" id="q5">
         <p>ツモアガり？</p>
         <div class="Y-N">
-          <label class="yes"><input type="radio" name="question5" id="q5-yes">YES</label>
-          <label class="no"><input type="radio" name="question5" id="q5-no">NO</label>
+          <input type="radio" name="question5" id="q5-yes"><label for="q5-yes" class="yes">YES</label>
+          <input type="radio" name="question5" id="q5-no"><label for="q5-no" class="no">NO</label>
         </div>
       </div>
     </section>
 
     <h2 class="chapter">カンした？</h2>
-    <section id="kan-wrapper" class="kan-wrapper">
+    <section id="kan-wrapper">
       <p><span class="skip"><i class="fas fa-arrow-circle-down fa-lg"></i>してない場合はこのまま「計算する」</span><br>カンをしているとたくさん符が追加されるよ！槓子を数えよう！</p>
       <div class="kan">
         <div class="kan-example">
           <div>
             <div class="kan-count">
               <div>
-                <p class="no-margin-top">暗カン<br>（1・9・字牌）</p>
+                <p class="no-margin-top">暗カン<br>(1・9・字牌）</p>
                 <div class="tile">
                   <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif" ALT="一萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif" ALT="一萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
                 </div>
@@ -109,13 +109,13 @@
                 <div class="count">
                   <p class="plus" id="ankan1+">+</p>
                   <p><span class="count-value" id="ankan1">0</span> 組</p>
-                  <p class="zero" id="ankan1-">0に戻す</p>
                 </div>
+                <p class="zero" id="ankan1-">0に戻す</p>
               </div>
             </div>
             <div class="kan-count">
               <div>
-                <p class="no-margin-top">暗カン<br>（1・9・字牌以外）</p>
+                <p class="no-margin-top">暗カン<br>(1・9・字牌以外）</p>
                 <div class="tile">
                   <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif" ALT="五萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif" ALT="五萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
                 </div>
@@ -128,15 +128,15 @@
                 <div class="count">
                   <p class="plus" id="ankan2+">+</p>
                   <p><span class="count-value" id="ankan2">0</span> 組</p>
-                  <p class="zero" id="ankan2-">0に戻す</p>
                 </div>
+                <p class="zero" id="ankan2-">0に戻す</p>
               </div>
             </div>
           </div>
           <div>
             <div class="kan-count">
               <div>
-                <p class="no-margin-top">暗カン以外<br>（1・9・字牌）</p>
+                <p class="no-margin-top">暗カン以外<br>(1・9・字牌）</p>
                 <div class="tile">
                   <img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss1_3.gif" ALT="一索横：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国">
                 </div>
@@ -150,13 +150,13 @@
                 <div class="count">
                   <p class="plus" id="minkan1+">+</p>
                   <p><span class="count-value" id="minkan1">0</span> 組</p>
-                  <p class="zero" id="minkan1-">0に戻す</p>
                 </div>
+                <p class="zero" id="minkan1-">0に戻す</p>
               </div>
             </div>
             <div class="kan-count">
               <div>
-                <p class="no-margin-top">暗カン以外<br>（1・9・字牌以外）</p>
+                <p class="no-margin-top">暗カン以外<br>(1・9・字牌以外）</p>
                 <div class="tile">
                   <img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ps6_3.gif" ALT="六筒横：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国">
                 </div>
@@ -170,8 +170,8 @@
                 <div class="count">
                   <p class="plus" id="minkan2+">+</p>
                   <p><span class="count-value" id="minkan2">0</span> 組</p>
-                  <p class="zero" id="minkan2-">0に戻す</p>
                 </div>
+                <p class="zero" id="minkan2-">0に戻す</p>
               </div>
             </div>
           </div>
@@ -183,7 +183,7 @@
     <h2>点数表</h2>
     <section id="list">
       <p>正確な点数表です。<br>暗刻が多かったりカンがあると符が繰り上がる可能性があります。<br>麻雀に慣れてきたら正しい符計算も覚えてみましょう！</p>
-      <h3>親の場合（カッコ内はツモの点数）</h3>
+      <h3>親の場合(カッコ内はツモの点数）</h3>
       <div id="tabbody">
         <div class="pointtables" id="tabpage1">
           <table class="tableborder oya-points">
@@ -289,7 +289,7 @@
           </div>
         </div>
 
-        <h3>子の場合（カッコ内はツモの点数）</h3>
+        <h3>子の場合(カッコ内はツモの点数）</h3>
         <div class="pointtables" id="tabpage2">
           <table class="tableborder ko-points">
             <tr>
@@ -398,12 +398,12 @@
 
     <section id="result">
       <div id="result_display">
-        <span id="fu_result">？</span> 符 <span id="han-result">？</span> 翻 ： <span id="ten-result">？</span> 点 <span id="ten-idou"></span>
+        <p><span id="fu_result">？</span> 符 <span id="han-result">？</span> 翻 ： <span id="ten-result">？</span> 点 <br>(<span id="ten-idou"></span>)</p>
       </div>
       <button id="calculation">計算する</button>
-      <button id="reset" class="disabled">リセット（未実装）</button>
+      <button id="reset" class="disabled">リセット(未実装）</button>
       <a href="#page-top"><i class="far fa-arrow-alt-circle-up fa-3x" title="ページトップ"></i></a>
-      </section>
+    </section>
   </main>
 
   <script src="main.js"></script>
