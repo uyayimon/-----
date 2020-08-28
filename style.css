@@ -31,6 +31,7 @@ label {
   border-radius: 0.5em;
   width: 4.5em;
   font-size: 1.1em;
+  margin: 0.1em;
 }
 
 input[type=radio] {
@@ -52,10 +53,6 @@ input[type=radio]:checked + label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.choices label {
-  margin: 0.1em 0.2em;
 }
 
 header h1 {
@@ -102,23 +99,22 @@ header h1 {
 }
 
 .question {
-  height: 2em;
+  height: 5vh;
   margin-bottom: 0.5em;
-  font-size: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .question p {
+  line-height: 5vh;
   margin: 0;
   width: 18em;
-  line-height: 2em;
   background-color: lemonchiffon;
 }
 
 .question .Y-N {
-  line-height: 2em;
+  line-height: 5vh;
 }
 
 .question .yes {
@@ -216,10 +212,10 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0.3em 0;
 }
 
 .kan .plus {
-  margin: 0;
   width: 1.5em;
   cursor: pointer;
   border: 1px solid;
@@ -232,7 +228,6 @@ header h1 {
 }
 
 .kan .zero {
-  margin: 0;
   cursor: pointer;
   font-size: 0.8em;
   border: 1px solid;
@@ -312,14 +307,13 @@ header h1 {
   font-size: 1.3em;
 }
 
-.fa-arrow-alt-circle-up {
+#to-top {
   float: right;
-  z-index: 3;
-  color: black;
+  z-index: 2;
   opacity: 0.7;
 }
 
-.fa-arrow-alt-circle-up:hover {
+#to-top:hover {
   cursor: pointer;
   opacity: 1;
 }
@@ -338,11 +332,8 @@ header h1 {
     width: 100%;
     font-size: 0.7em;
   }
-  p {
-    margin: 0;
-  }
   label {
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding: 0.1em;
   }
   .chapter {
