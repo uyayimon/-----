@@ -1,0 +1,273 @@
+html {
+  scroll-behavior: smooth; //ページ内リンクをスクロールにする
+}
+body {
+  font-family: '游ゴシック体', 'Yu Gothic', 'メイリオ', 'Meiryo', sans-serif;;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1000px;
+  margin-bottom: 5em;
+}
+hr {
+  border-width: 0.3px;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+label {
+  display:inline-block;
+  cursor: pointer;
+  border: 1px solid #666;
+  border-radius: 0.5em;
+  width: 4.5em;
+  font-size: 1.1em;
+  margin: 0.1em;
+}
+input[type=radio] {
+  display: none;
+  &:checked + label {
+  background-color: palevioletred;;
+  color: #ffffff;
+  }
+}
+.chapter {
+  background-color: lemonchiffon;
+  margin-bottom: 0.5em;
+}
+.choices {
+  user-select: none;
+}
+
+header {
+  h1 {
+    margin: 0;
+  }
+}
+
+#over5label {
+  font-size: 1em;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+.hidden_box {
+  #label1 {
+    display: none;
+  }
+  .hidden_show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-size: 0.8em;
+  }
+  input:checked ~ .hidden_show {
+    height: auto;
+    opacity: 1;
+  }
+}
+
+#questions-wrapper {
+  display: inline-block;
+}
+.question {
+  margin-bottom: 0.5em;
+  display: flex;
+  p {
+    margin: 0;
+    width: 18em;
+    background-color: lemonchiffon;
+  }
+  .Y-N {
+  }
+  .yes {
+    color: rgb(248, 61, 164);
+    user-select: none;
+  }
+  .no {
+    color: rgb(106, 206, 201);
+    user-select: none;
+  }
+  input[type=radio] {
+    &:checked + label.yes {
+      background-color: rgb(250, 169, 183);
+    }
+  }
+  input[type=radio] {
+    &:checked + label.no {
+      background-color: lightseagreen;
+    }
+  }
+}
+
+.kan {
+  .kan-example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    >div {
+      display: flex;
+    }
+  }
+  .kan-count {
+    border: 1px solid #666;
+    margin: 0.1em;
+    padding: 0.5em;
+    >div {
+      height: 50%;
+    }
+    p {
+      margin: 0;
+    }
+    span {
+      font-weight: bold;
+    }
+    .count-value {
+      font-size: 1.2em;
+    }
+  }
+  .tile {
+    display: inline-flex;
+    align-items: flex-end;
+  }
+  img{
+    width: 19px;
+    height: 26px;
+  }
+  .yoko {
+    width: 26px;
+    height: 19px;
+  }
+  .kakan {
+    display: flex;
+    flex-direction: column;
+  }
+  .count {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.5em 0;
+  }
+  .plus {
+    width: 1.5em;
+    cursor: pointer;
+    border: 1px solid #666;
+    font-size: 1.5em;
+    background-color: pink;
+    user-select: none;
+  }
+  .zero {
+    cursor: pointer;
+    font-size: 0.8em;
+    border: 1px solid #666;
+    user-select: none;
+  }
+}
+
+//表
+.pointtables {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .tableborder {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.8em;
+    margin: 0.3em;
+    th {
+      width: 7em;
+      border:solid 1px #666;
+    }
+    td {
+      width: 7em;
+      border: solid 1px #666;
+    }
+  }
+  .oya-points th {
+    background-color: pink;
+  }
+  .ko-points th {
+    background-color: lightblue;
+  }
+}
+
+#result {
+  width: 100%;
+  padding: 0.4em;
+  background-color: #f7c569;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  #result_display {
+    display: none;
+  }
+  button {
+    border-radius: 1em;
+  }
+  #calculation {
+    cursor: pointer;
+    height: 3em;
+    width: 30%;
+    font-size: 1.1em;
+  }
+  #reset {
+    height: 3em;
+  }
+  #ten-result {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+}
+#to-top {
+  float: right;
+  z-index: 2;
+  opacity: 0.7;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.tweet {
+  display: inline-block;
+}
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@media screen and (max-width:600px){
+  header {
+    width: 100%;
+    font-size: 0.7em;
+  }
+  label {
+    font-size: 1.2em;
+    padding: 0.1em;
+  }
+  .chapter {
+    font-size: 0.9em;
+  }
+  .question {
+    height: auto;
+    flex-direction: column;
+  }
+  .kan-example {
+    >div {
+      flex-direction: column;
+    }
+  }
+  .kan-count {
+    display: flex;
+  }
+}
