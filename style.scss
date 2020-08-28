@@ -9,9 +9,6 @@ body {
   max-width: 1000px;
   margin-bottom: 5em;
 }
-hr {
-  border-width: 0.3px;
-}
 .no-margin-top {
   margin-top: 0;
 }
@@ -25,7 +22,7 @@ label {
   border-radius: 0.5em;
   width: 4.5em;
   font-size: 1.1em;
-  margin: 0.1em;
+  margin: 0.2em;
 }
 input[type=radio] {
   display: none;
@@ -40,12 +37,6 @@ input[type=radio] {
 }
 .choices {
   user-select: none;
-}
-
-header {
-  h1 {
-    margin: 0;
-  }
 }
 
 #over5label {
@@ -86,8 +77,6 @@ header {
     margin: 0;
     width: 18em;
     background-color: lemonchiffon;
-  }
-  .Y-N {
   }
   .yes {
     color: rgb(248, 61, 164);
@@ -131,34 +120,34 @@ header {
     span {
       font-weight: bold;
     }
-    .count-value {
-      font-size: 1.2em;
-    }
   }
   .tile {
     display: inline-flex;
     align-items: flex-end;
-  }
-  img{
-    width: 19px;
-    height: 26px;
-  }
-  .yoko {
-    width: 26px;
-    height: 19px;
-  }
-  .kakan {
-    display: flex;
-    flex-direction: column;
+    img{
+      width: 19px;
+      height: 26px;
+    }
+    .yoko {
+      width: 26px;
+      height: 19px;
+    }
+    .kakan {
+      display: flex;
+      flex-direction: column;
+    }
   }
   .count {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0.5em 0;
+    margin: 10% auto;
+    .count-value {
+      font-size: 1.5em;
+    }
   }
   .plus {
-    width: 1.5em;
+    width: 25%;
     cursor: pointer;
     border: 1px solid #666;
     font-size: 1.5em;
@@ -184,6 +173,7 @@ header {
     font-size: 0.8em;
     margin: 0.3em;
     th {
+      white-space: nowrap;
       width: 7em;
       border:solid 1px #666;
     }
@@ -248,26 +238,33 @@ header {
 
 @media screen and (max-width:600px){
   header {
-    width: 100%;
     font-size: 0.7em;
   }
-  label {
-    font-size: 1.2em;
-    padding: 0.1em;
-  }
   .chapter {
-    font-size: 0.9em;
+    font-size: 1.3em;
+  }
+  label {
+    font-size: 1.5em;
+    padding: 0.4em 0;
   }
   .question {
     height: auto;
     flex-direction: column;
+    p {
+      font-size: 1.3em;
+      width: 100%;
+    }
   }
   .kan-example {
+    font-size: 1.3em;
     >div {
       flex-direction: column;
     }
   }
   .kan-count {
     display: flex;
+    >div {
+      width: 50%;
+    }
   }
 }

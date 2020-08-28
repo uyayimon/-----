@@ -12,10 +12,6 @@ body {
   margin-bottom: 5em;
 }
 
-hr {
-  border-width: 0.3px;
-}
-
 .no-margin-top {
   margin-top: 0;
 }
@@ -31,7 +27,7 @@ label {
   border-radius: 0.5em;
   width: 4.5em;
   font-size: 1.1em;
-  margin: 0.1em;
+  margin: 0.2em;
 }
 
 input[type=radio] {
@@ -53,10 +49,6 @@ input[type=radio]:checked + label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-header h1 {
-  margin: 0;
 }
 
 #over5label {
@@ -170,10 +162,6 @@ header h1 {
   font-weight: bold;
 }
 
-.kan .kan-count .count-value {
-  font-size: 1.2em;
-}
-
 .kan .tile {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -183,17 +171,17 @@ header h1 {
           align-items: flex-end;
 }
 
-.kan img {
+.kan .tile img {
   width: 19px;
   height: 26px;
 }
 
-.kan .yoko {
+.kan .tile .yoko {
   width: 26px;
   height: 19px;
 }
 
-.kan .kakan {
+.kan .tile .kakan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,11 +201,15 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.5em 0;
+  margin: 10% auto;
+}
+
+.kan .count .count-value {
+  font-size: 1.5em;
 }
 
 .kan .plus {
-  width: 1.5em;
+  width: 25%;
   cursor: pointer;
   border: 1px solid #666;
   font-size: 1.5em;
@@ -257,6 +249,7 @@ header h1 {
 }
 
 .pointtables .tableborder th {
+  white-space: nowrap;
   width: 7em;
   border: solid 1px #666;
 }
@@ -330,15 +323,14 @@ header h1 {
 
 @media screen and (max-width: 600px) {
   header {
-    width: 100%;
     font-size: 0.7em;
   }
-  label {
-    font-size: 1.2em;
-    padding: 0.1em;
-  }
   .chapter {
-    font-size: 0.9em;
+    font-size: 1.3em;
+  }
+  label {
+    font-size: 1.5em;
+    padding: 0.4em 0;
   }
   .question {
     height: auto;
@@ -346,6 +338,13 @@ header h1 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .question p {
+    font-size: 1.3em;
+    width: 100%;
+  }
+  .kan-example {
+    font-size: 1.3em;
   }
   .kan-example > div {
     -webkit-box-orient: vertical;
@@ -357,6 +356,9 @@ header h1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .kan-count > div {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */
