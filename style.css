@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: '游ゴシック体', 'Yu Gothic', sans-serif;
+  font-family: '游ゴシック体', 'Yu Gothic', 'メイリオ', 'Meiryo', sans-serif;
   font-weight: 500;
   margin: 0 auto;
   text-align: center;
@@ -29,7 +29,7 @@ label {
   cursor: pointer;
   border: 1px solid #666;
   border-radius: 0.5em;
-  width: 4em;
+  width: 4.5em;
   font-size: 1.2em;
 }
 
@@ -38,7 +38,7 @@ input[type=radio] {
 }
 
 input[type=radio]:checked + label {
-  background-color: pink;
+  background-color: palevioletred;
   color: #ffffff;
 }
 
@@ -131,7 +131,7 @@ header h1 {
 }
 
 .question .no {
-  color: lightseagreen;
+  color: #6acec9;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -139,7 +139,7 @@ header h1 {
 }
 
 .question input[type=radio]:checked + label.yes {
-  background-color: #f83da4;
+  background-color: #faa9b7;
 }
 
 .question input[type=radio]:checked + label.no {
@@ -174,7 +174,7 @@ header h1 {
 }
 
 .kan .kan-count p {
-  margin: 0;
+  margin: 0.1em 0;
 }
 
 .kan .kan-count span {
@@ -347,6 +347,9 @@ header h1 {
   }
   p {
     margin: 0;
+  }
+  label {
+    padding: 0.2em;
   }
   .question {
     height: auto;
