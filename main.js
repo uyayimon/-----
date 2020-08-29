@@ -11,23 +11,14 @@ let pointmove = document.getElementById('ten-idou');
 let Y_N = document.querySelectorAll('.Y-N');
 for (i = 0; i < Y_N.length; i++) {
   Y_N[i].addEventListener('change', function () {
-    // if (document.getElementById('q5-yes').checked === true) {
-    // }
     if (document.getElementById('q3-no').checked === true) {
       q4.classList.remove('disabled');
       q5.classList.remove('disabled');
-      kan.classList.remove('disabled');
-      han1.disabled = false;
     }
     if (document.getElementById('q3-yes').checked === true) {
       q4.classList.add('disabled');
       q5.classList.add('disabled');
     }
-    if (document.getElementById('q2-no').checked === true) {
-      han1.disabled = false;
-    }
-    // if (document.getElementById('q2-yes').checked === true) {
-    // }
     if (document.getElementById('q1-no').checked === true) {
       q3.classList.remove('disabled');
       q2.classList.add('disabled');
@@ -42,30 +33,34 @@ for (i = 0; i < Y_N.length; i++) {
 }
 
 // 槓子の有無と値取得
-let ankan1Count = 0; let ankan2Count = 0; let minkan1Count = 0; let minkan2Count = 0; // 初期値
-let limit = 4;
+// コードが汚すぎる、なんとかし
+let ankan1Count = 0, ankan2Count = 0, minkan1Count = 0, minkan2Count = 0; // 初期値
 let ankan1 = document.getElementById('ankan1'); let ankan2 = document.getElementById('ankan2'); let minkan1 = document.getElementById('minkan1'); let minkan2 = document.getElementById('minkan2');
 
 document.getElementById('ankan1+').addEventListener('click', function () {
-  if (ankan1Count < limit) { ankan1Count++; ankan1.innerHTML = ankan1Count; }
+  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+  if (kansTotal < 4) { ankan1Count++; ankan1.innerHTML = ankan1Count; }
 });
 document.getElementById('ankan1-').addEventListener('click', function () {
   ankan1Count = 0; ankan1.innerHTML = ankan1Count;
 });
 document.getElementById('ankan2+').addEventListener('click', function () {
-  if (ankan2Count < limit) { ankan2Count++; ankan2.innerHTML = ankan2Count; }
+  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+  if (kansTotal < 4) { ankan2Count++; ankan2.innerHTML = ankan2Count; }
 });
 document.getElementById('ankan2-').addEventListener('click', function () {
   ankan2Count = 0; ankan2.innerHTML = ankan2Count;
 });
 document.getElementById('minkan1+').addEventListener('click', function () {
-  if (minkan1Count < limit) { minkan1Count++; minkan1.innerHTML = minkan1Count; }
+  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+  if (kansTotal < 4) { minkan1Count++; minkan1.innerHTML = minkan1Count; }
 });
 document.getElementById('minkan1-').addEventListener('click', function () {
   minkan1Count = 0; minkan1.innerHTML = minkan1Count;
 });
 document.getElementById('minkan2+').addEventListener('click', function () {
-  if (minkan2Count < limit) { minkan2Count++; minkan2.innerHTML = minkan2Count; }
+  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+  if (kansTotal < 4) { minkan2Count++; minkan2.innerHTML = minkan2Count; }
 });
 document.getElementById('minkan2-').addEventListener('click', function () {
   minkan2Count = 0; minkan2.innerHTML = minkan2Count;
@@ -153,7 +148,7 @@ document.getElementById('calculation').addEventListener('click', function () {
     if (han_su == 4) {
       if (fu_su == 20) { point.innerHTML = '7700'; pointmove.innerHTML = '(2600オール)'; }
       if (fu_su == 25) { point.innerHTML = '9600'; pointmove.innerHTML = '(ツモアガりなら3200オール)'; }
-      if (fu_su >= 30) { point.innerHTML = '12000'; pointmove.innerHTML = '(ツモアガりなら4000オール)'; }
+      if (fu_su >= 30) { point.innerHTML = '11600'; pointmove.innerHTML = '(ツモアガりなら3900オール)'; }
     }
 
     if (han_su == 5) { point.innerHTML = '12000'; pointmove.innerHTML = '(ツモアガりなら4000オール)'; }

@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 5em;
+  margin-bottom: 10em;
 }
 
 .no-margin-top {
@@ -201,7 +201,7 @@ input[type=radio]:checked + label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 10% auto;
+  margin: 5% auto;
 }
 
 .kan .count .count-value {
@@ -209,15 +209,13 @@ input[type=radio]:checked + label {
 }
 
 .kan .plus {
-  width: 25%;
   cursor: pointer;
-  border: 1px solid #666;
-  font-size: 1.5em;
-  background-color: pink;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  padding: 1%;
+  color: palevioletred;
 }
 
 .kan .zero {
@@ -269,7 +267,7 @@ input[type=radio]:checked + label {
 
 #result {
   width: 100%;
-  padding: 0.4em;
+  padding: 0.5em;
   background-color: #f7c569;
   position: fixed;
   bottom: 0;
@@ -278,6 +276,7 @@ input[type=radio]:checked + label {
 }
 
 #result #result_display {
+  padding: 0.5em;
   display: none;
 }
 
