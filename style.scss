@@ -7,7 +7,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 10em;
+  margin-bottom: 20%;
 }
 .no-margin-top {
   margin-top: 0;
@@ -111,6 +111,7 @@ input[type=radio] {
     border: 1px solid #666;
     margin: 0.1em;
     padding: 0.5em;
+    border-radius: 0.5em;
     >div {
       height: 50%;
     }
@@ -122,6 +123,7 @@ input[type=radio] {
     }
   }
   .tile {
+    margin-top: 5%;
     display: inline-flex;
     align-items: flex-end;
     img{
@@ -141,7 +143,7 @@ input[type=radio] {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 5% auto;
+    margin: 3% auto;
     .count-value {
       font-size: 1.5em;
     }
@@ -149,7 +151,6 @@ input[type=radio] {
   .plus {
     cursor: pointer;
     user-select: none;
-    padding: 1%;
     color: palevioletred;
   }
   .zero {
@@ -157,6 +158,8 @@ input[type=radio] {
     font-size: 0.8em;
     border: 1px solid #666;
     user-select: none;
+    padding: 1%;
+    border-radius: 0.5em;
   }
 }
 
@@ -197,7 +200,6 @@ input[type=radio] {
   left: 0;
   z-index: 1;
   #result_display {
-    padding: 0.5em;
     display: none;
   }
   button {
@@ -205,12 +207,13 @@ input[type=radio] {
   }
   #calculation {
     cursor: pointer;
-    height: 3em;
-    width: 30%;
+    height: 5em;
+    width: 45%;
     font-size: 1.1em;
   }
   #reset {
-    height: 3em;
+    display: none;
+    height: 4em;
   }
   #ten-result {
     font-weight: bold;
@@ -219,8 +222,13 @@ input[type=radio] {
 }
 #to-top {
   float: right;
+  margin-right: 2%;
   z-index: 2;
   opacity: 0.7;
+  p {
+    margin: 0;
+    font-size: 0.6em;
+  }
   &:hover {
     cursor: pointer;
     opacity: 1;

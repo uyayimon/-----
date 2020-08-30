@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 10em;
+  margin-bottom: 20%;
 }
 
 .no-margin-top {
@@ -148,6 +148,7 @@ input[type=radio]:checked + label {
   border: 1px solid #666;
   margin: 0.1em;
   padding: 0.5em;
+  border-radius: 0.5em;
 }
 
 .kan .kan-count > div {
@@ -163,6 +164,7 @@ input[type=radio]:checked + label {
 }
 
 .kan .tile {
+  margin-top: 5%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -201,7 +203,7 @@ input[type=radio]:checked + label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5% auto;
+  margin: 3% auto;
 }
 
 .kan .count .count-value {
@@ -214,7 +216,6 @@ input[type=radio]:checked + label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  padding: 1%;
   color: palevioletred;
 }
 
@@ -226,6 +227,8 @@ input[type=radio]:checked + label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  padding: 1%;
+  border-radius: 0.5em;
 }
 
 .pointtables {
@@ -276,7 +279,6 @@ input[type=radio]:checked + label {
 }
 
 #result #result_display {
-  padding: 0.5em;
   display: none;
 }
 
@@ -286,13 +288,14 @@ input[type=radio]:checked + label {
 
 #result #calculation {
   cursor: pointer;
-  height: 3em;
-  width: 30%;
+  height: 5em;
+  width: 45%;
   font-size: 1.1em;
 }
 
 #result #reset {
-  height: 3em;
+  display: none;
+  height: 4em;
 }
 
 #result #ten-result {
@@ -302,8 +305,14 @@ input[type=radio]:checked + label {
 
 #to-top {
   float: right;
+  margin-right: 2%;
   z-index: 2;
   opacity: 0.7;
+}
+
+#to-top p {
+  margin: 0;
+  font-size: 0.6em;
 }
 
 #to-top:hover {

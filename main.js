@@ -33,7 +33,6 @@ for (i = 0; i < Y_N.length; i++) {
 }
 
 // 槓子の有無と値取得
-// コードが汚すぎる、なんとかし
 let ankan1Count = 0, ankan2Count = 0, minkan1Count = 0, minkan2Count = 0; // 初期値
 let ankan1 = document.getElementById('ankan1'); let ankan2 = document.getElementById('ankan2'); let minkan1 = document.getElementById('minkan1'); let minkan2 = document.getElementById('minkan2');
 
@@ -75,9 +74,9 @@ for (i = 0; i < han.length; i++) {
   })
 }
 
-// 得点計算と表示
-//  ①符数取得
+// ●得点計算と表示●
 document.getElementById('calculation').addEventListener('click', function () {
+  //  ①符数取得
   if (document.getElementById('q1-yes').checked === true) {
     if (document.getElementById('q2-yes').checked === true) { fu_su = 40; }
     if (document.getElementById('q2-no').checked === true) { fu_su = 30; }
@@ -112,8 +111,8 @@ document.getElementById('calculation').addEventListener('click', function () {
   //  ③符数と翻数に応じた結果表示
   if (document.getElementById('oya').checked === true) {
     if (han_su == 1) {
-      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return; }
-      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return; }
+      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return false; }
+      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return false; }
       if (fu_su == 30) { point.innerHTML = '1500'; pointmove.innerHTML = '(ツモアガりなら500オール)'; }
       if (fu_su == 40) { point.innerHTML = '2000'; pointmove.innerHTML = '(ツモアガりなら700オール)'; }
       if (fu_su == 50) { point.innerHTML = '2400'; pointmove.innerHTML = '(ツモアガりなら800オール)'; }
@@ -159,8 +158,8 @@ document.getElementById('calculation').addEventListener('click', function () {
   }
   if (document.getElementById('ko').checked === true) {
     if (han_su == 1) {
-      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return; }
-      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return; }
+      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return false; }
+      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return false; }
       if (fu_su == 30) { point.innerHTML = '1000'; pointmove.innerHTML = '(ツモアガりなら300,500)'; }
       if (fu_su == 40) { point.innerHTML = '1300'; pointmove.innerHTML = '(ツモアガりなら400,700)'; }
       if (fu_su == 50) { point.innerHTML = '1600'; pointmove.innerHTML = '(ツモアガりなら400,800)'; }
@@ -210,7 +209,8 @@ document.getElementById('calculation').addEventListener('click', function () {
   // if (document.getElementById('q5-no').checked === true ) {
   //   pointmove.innerHTML = '';
   // }
-  document.getElementById('result_display').style.display = 'block';
+  document.getElementById('result_display').style.display = 'initial';
+  document.getElementById('reset').style.display = 'initial';
 
 })
 
@@ -225,21 +225,20 @@ document.getElementById('reset').addEventListener('click', function () {
   han_result.innerHTML = '？';
   point.innerHTML = '？';
   pointmove.innerHTML = '';
+  document.getElementById('result_display').style.display = 'none';
+  document.getElementById('reset').style.display = 'none';
   // 初期値に戻す
-  fu_su = 0;
+  fu_su = 20;
   ankan1Count = 0; ankan2Count = 0; minkan1Count = 0; minkan2Count = 0;
-  han1.checked = true;
+  han1.checked = true; han_su = 1;
   document.getElementById('ko').checked = true;
-  kan.classList.remove('disabled');
   // 槓子の値を戻す
+  let kansCount = document.querySelectorAll('.count-value')
   for (i = 0; i < kansCount.length; i++) {
     kansCount[i].innerHTML = '0';
   };
   // Q1を初期化
-  q2.classList.add('disabled');
-  q3.classList.add('disabled');
-  q4.classList.add('disabled');
-  q5.classList.add('disabled');
+  q2.classList.add('disabled'); q3.classList.add('disabled'); q4.classList.add('disabled'); q5.classList.add('disabled');
 });
 
 //トップへ戻る
