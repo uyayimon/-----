@@ -148,7 +148,7 @@ input[type=radio]:checked + label {
   border: 1px solid #666;
   margin: 0.1em;
   padding: 0.5em;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
 }
 
 .kan .kan-count > div {
