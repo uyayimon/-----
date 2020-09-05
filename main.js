@@ -6,13 +6,29 @@ let fu_result = document.getElementById('fu_result');
 let han_result = document.getElementById('han-result');
 let ten_result = document.getElementById('ten-result');
 let tsumo_result = document.getElementById('tsumo-result');
+let result_display = document.getElementById('result_display')
 
-let fu_su = 0;
+let fu_su = '';
 
 // 選択肢による項目のアクティブ・パッシブ化
 let yesNo = document.querySelectorAll('.yes-no');
+function uncheckDisabled() {
+  let disabled = document.querySelectorAll('.disabled input:checked')
+  for (i = 0; i < disabled.length; i++) {
+    disabled[i].checked = false;
+  }
+}
+function han1Cancel() {
+  if (han1.checked === true) {
+    document.getElementById('2han').checked = true;
+  }
+}
+
 for (i = 0; i < yesNo.length; i++) {
   yesNo[i].addEventListener('change', function () {
+    if (document.getElementById('q4-yes').checked === true && document.getElementById('q5-yes').checked === true) {
+      han1Cancel();
+    }
     if (document.getElementById('q3-no').checked === true) {
       q4.classList.remove('disabled');
       q5.classList.remove('disabled');
@@ -20,6 +36,11 @@ for (i = 0; i < yesNo.length; i++) {
     if (document.getElementById('q3-yes').checked === true) {
       q4.classList.add('disabled');
       q5.classList.add('disabled');
+      uncheckDisabled();
+      han1Cancel();
+    }
+    if (document.getElementById('q2-yes').checked === true) {
+      han1Cancel();
     }
     if (document.getElementById('q1-no').checked === true) {
       q3.classList.remove('disabled');
@@ -30,6 +51,7 @@ for (i = 0; i < yesNo.length; i++) {
       q3.classList.add('disabled');
       q4.classList.add('disabled');
       q5.classList.add('disabled');
+      uncheckDisabled();
     }
   });
 }
@@ -67,18 +89,11 @@ document.getElementById('minkan2-').addEventListener('click', function () {
   minkan2Count = 0; minkan2.innerHTML = minkan2Count;
 });
 
-// 翻数表示
-let han_su = 1; //初期値
-let han = document.getElementsByName('han');
-for (i = 0; i < han.length; i++) {
-  han[i].addEventListener('change', function () {
-    han_su = this.value;
-  })
-}
 
 // ●得点計算と表示●
 document.getElementById('calculation').addEventListener('click', function () {
-  //  ①符数取得
+
+  // ①符数取得
   (function getFusu() {
     if (document.getElementById('q1-yes').checked === true) {
       if (document.getElementById('q2-yes').checked === true) { fu_su = 40; }
@@ -99,7 +114,12 @@ document.getElementById('calculation').addEventListener('click', function () {
     }
   })();
 
-  //  ②カンによる符をカウント
+  // 数値を識別
+  if (isFinite(fu_su) === false) {
+    return false;
+  }
+
+  // ②カンによる符をカウント
   (function getKanFu() {
     let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan1Count * 20 + minkan2Count * 10;
 
@@ -112,11 +132,22 @@ document.getElementById('calculation').addEventListener('click', function () {
     }
   })();
 
-  //  ③符数と翻数に応じた結果表示
+  // ③飜数取得
+  let elements = document.getElementsByName('han');
+  // 選択状態の値を取得
+  for (let a = "", i = elements.length; i--;) {
+    if (elements[i].checked) {
+      let a = elements[i].value; // aには選択状態の値が代入されている
+      han_su = a;
+    }
+  }
+
+
+  // ④符数と飜数に応じた点数
   if (document.getElementById('oya').checked === true) {
     if (han_su == 1) {
-      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return false; }
-      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return false; }
+      if (fu_su == 20) { alert('20符1飜のアガりはありません'); return false; }
+      if (fu_su == 25) { alert('25符1飜のアガりはありません'); return false; }
       if (fu_su == 30) { getPoint = '1500'; tsumoAgari = '(ツモアガりなら500オール)'; }
       if (fu_su == 40) { getPoint = '2000'; tsumoAgari = '(ツモアガりなら700オール)'; }
       if (fu_su == 50) { getPoint = '2400'; tsumoAgari = '(ツモアガりなら800オール)'; }
@@ -162,8 +193,8 @@ document.getElementById('calculation').addEventListener('click', function () {
   }
   if (document.getElementById('ko').checked === true) {
     if (han_su == 1) {
-      if (fu_su == 20) { alert('20符1翻のアガりはありません'); return false; }
-      if (fu_su == 25) { alert('25符1翻のアガりはありません'); return false; }
+      if (fu_su == 20) { alert('20符1飜のアガりはありません'); return false; }
+      if (fu_su == 25) { alert('25符1飜のアガりはありません'); return false; }
       if (fu_su == 30) { getPoint = '1000'; tsumoAgari = '(ツモアガりなら300,500)'; }
       if (fu_su == 40) { getPoint = '1300'; tsumoAgari = '(ツモアガりなら400,700)'; }
       if (fu_su == 50) { getPoint = '1600'; tsumoAgari = '(ツモアガりなら400,800)'; }
@@ -209,16 +240,15 @@ document.getElementById('calculation').addEventListener('click', function () {
     if (han_su >= 11) { getPoint = '24000'; tsumoAgari = '(ツモアガりなら6000,12000)'; }
     if (han_su >= 13) { getPoint = '32000'; tsumoAgari = '(ツモアガりなら8000,16000)'; }
   }
-  // ロンアガりのとき（）を表示させないようにしたいけど選びなおしたときに融通がきかない
-  // if (document.getElementById('q5-no').checked === true ) {
-  //   tsumo_result.innerHTML = '';
-  // }
-  document.getElementById('result_display').style.display = 'initial';
-  document.getElementById('reset').style.display = 'initial';
+
+
+  // ⑤結果表示
   fu_result.innerHTML = fu_su;
   han_result.innerHTML = han_su;
   ten_result.innerHTML = getPoint;
   tsumo_result.innerHTML = tsumoAgari;
+  result_display.style.display = 'block';
+  document.getElementById('reset').style.display = 'inline';
 })
 
 // リセット
@@ -233,13 +263,15 @@ document.getElementById('reset').addEventListener('click', function () {
   han_result.innerHTML = '？';
   ten_result.innerHTML = '？';
   tsumo_result.innerHTML = '';
-  document.getElementById('result_display').style.display = 'none';
+  result_display.style.display = 'none';
   document.getElementById('reset').style.display = 'none';
   // 初期値に戻す
   ankan1Count = 0; ankan2Count = 0; minkan1Count = 0; minkan2Count = 0;
   han1.checked = true
   han_su = 1;
-  fu_su = 0;
+  fu_su = 'undefined';
+  getPoint = '';
+  tsumoAgari = '';
   document.getElementById('ko').checked = true;
   // 槓子の値を戻す
   let kansCount = document.querySelectorAll('.count-value')

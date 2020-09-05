@@ -1,13 +1,10 @@
-html {
-  scroll-behavior: smooth; //ページ内リンクをスクロールにする
-}
 body {
   font-family: '游ゴシック体', 'Yu Gothic', 'メイリオ', 'Meiryo', sans-serif;;
   font-weight: 500;
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 20%;
+  margin-bottom: 10em;
 }
 .no-margin-top {
   margin-top: 0;
@@ -141,9 +138,8 @@ input[type=radio] {
   }
   .count {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin: 3% auto;
     .count-value {
       font-size: 1.5em;
     }
@@ -151,7 +147,6 @@ input[type=radio] {
   .plus {
     cursor: pointer;
     user-select: none;
-    color: palevioletred;
   }
   .zero {
     cursor: pointer;
@@ -245,7 +240,7 @@ input[type=radio] {
 
 @media screen and (max-width:600px){
   header {
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
   .chapter {
     font-size: 1.3em;
@@ -270,8 +265,6 @@ input[type=radio] {
   }
   .kan-count {
     display: flex;
-    >div {
-      width: 50%;
-    }
+    width: 90%;
   }
 }
