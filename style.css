@@ -8,14 +8,6 @@ body {
   margin-bottom: 10em;
 }
 
-.no-margin-top {
-  margin-top: 0;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
 label {
   display: inline-block;
   cursor: pointer;
@@ -123,7 +115,7 @@ input[type=radio]:checked + label {
   background-color: lightseagreen;
 }
 
-.kan .kan-example {
+#kan-wrapper .kan-count {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,33 +126,43 @@ input[type=radio]:checked + label {
           justify-content: center;
 }
 
-.kan .kan-example > div {
+#kan-wrapper .kan-count > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.kan .kan-count {
+#kan-wrapper .plus-area {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#kan-wrapper .plus-area:hover {
+  cursor: pointer;
+}
+
+#kan-wrapper .count-box {
   border: 1px solid #666;
   margin: 0.1em;
-  padding: 0.5em;
+  padding: 0.3em;
   border-radius: 0.3em;
 }
 
-.kan .kan-count > div {
+#kan-wrapper .count-box > div {
   height: 50%;
 }
 
-.kan .kan-count p {
+#kan-wrapper .count-box p {
   margin: 0;
 }
 
-.kan .kan-count span {
+#kan-wrapper .count-box span {
   font-weight: bold;
 }
 
-.kan .tile {
-  margin-top: 5%;
+#kan-wrapper .tile {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -169,17 +171,17 @@ input[type=radio]:checked + label {
           align-items: flex-end;
 }
 
-.kan .tile img {
+#kan-wrapper .tile img {
   width: 19px;
   height: 26px;
 }
 
-.kan .tile .yoko {
+#kan-wrapper .tile .yoko {
   width: 26px;
   height: 19px;
 }
 
-.kan .tile .kakan {
+#kan-wrapper .tile .kakan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,30 +191,11 @@ input[type=radio]:checked + label {
           flex-direction: column;
 }
 
-.kan .count {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.kan .count .count-value {
+#kan-wrapper .count-value {
   font-size: 1.5em;
 }
 
-.kan .plus {
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.kan .zero {
+#kan-wrapper .zero {
   cursor: pointer;
   font-size: 0.8em;
   border: 1px solid #666;
@@ -222,6 +205,10 @@ input[type=radio]:checked + label {
           user-select: none;
   padding: 1%;
   border-radius: 0.5em;
+}
+
+#kan-wrapper .zero:hover {
+  background-color: lightgrey;
 }
 
 .pointtables {
@@ -281,7 +268,7 @@ input[type=radio]:checked + label {
 
 #result #calculation {
   cursor: pointer;
-  height: 5em;
+  height: 4em;
   width: 45%;
   font-size: 1.1em;
 }
@@ -344,20 +331,23 @@ input[type=radio]:checked + label {
     font-size: 1.3em;
     width: 100%;
   }
-  .kan-example {
+  .kan-count {
     font-size: 1.3em;
   }
-  .kan-example > div {
+  .kan-count > div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .kan-count {
+  .count-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 90%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 95%;
   }
 }
 /*# sourceMappingURL=style.css.map */

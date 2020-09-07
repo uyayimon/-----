@@ -1,41 +1,46 @@
-let q1 = document.getElementById('q1'); let q2 = document.getElementById('q2'); let q3 = document.getElementById('q3'); let q4 = document.getElementById('q4'); let q5 = document.getElementById('q5');
-let kan = document.querySelector('.kan-wrapper');
-let han1 = document.getElementById('1han');
+const q1 = document.getElementById('q1'); const q2 = document.getElementById('q2'); const q3 = document.getElementById('q3'); const q4 = document.getElementById('q4'); const q5 = document.getElementById('q5');
+const han1 = document.getElementById('1han');
+// const kan = document.getElementById('kan-wrapper');
+const fu_result = document.getElementById('fu_result');
+const han_result = document.getElementById('han-result');
+const ten_result = document.getElementById('ten-result');
+const tsumo_result = document.getElementById('tsumo-result');
+const result_display = document.getElementById('result_display')
 
-let fu_result = document.getElementById('fu_result');
-let han_result = document.getElementById('han-result');
-let ten_result = document.getElementById('ten-result');
-let tsumo_result = document.getElementById('tsumo-result');
-let result_display = document.getElementById('result_display')
+let fu_su = 'no_value';
 
-let fu_su = '';
-
-// 選択肢による項目のアクティブ・パッシブ化
-let yesNo = document.querySelectorAll('.yes-no');
-function uncheckDisabled() {
-  let disabled = document.querySelectorAll('.disabled input:checked')
-  for (i = 0; i < disabled.length; i++) {
-    disabled[i].checked = false;
-  }
-}
-function han1Cancel() {
+function han1Cancel() { // 飜数：1飜→2飜に変更する
   if (han1.checked === true) {
     document.getElementById('2han').checked = true;
   }
 }
+function addDisabled(x) { // クラス"disabled"を付加
+  x.classList.add('disabled');
+}
+function removeDisabled(x) { // クラス"disabled"を除去
+  x.classList.remove('disabled');
+}
+function uncheckDisabled() { // 選択されていない選択肢のチェックを外す
+  const disabled = document.querySelectorAll('.disabled input:checked')
+  for (i = 0; i < disabled.length; i++) {
+    disabled[i].checked = false;
+  }
+}
 
+// 選択肢による項目のアクティブ・パッシブ化
+const yesNo = document.querySelectorAll('.yes-no');
 for (i = 0; i < yesNo.length; i++) {
   yesNo[i].addEventListener('change', function () {
     if (document.getElementById('q4-yes').checked === true && document.getElementById('q5-yes').checked === true) {
       han1Cancel();
     }
     if (document.getElementById('q3-no').checked === true) {
-      q4.classList.remove('disabled');
-      q5.classList.remove('disabled');
+      removeDisabled(q4);
+      removeDisabled(q5);
     }
     if (document.getElementById('q3-yes').checked === true) {
-      q4.classList.add('disabled');
-      q5.classList.add('disabled');
+      addDisabled(q4);
+      addDisabled(q5);
       uncheckDisabled();
       han1Cancel();
     }
@@ -43,52 +48,73 @@ for (i = 0; i < yesNo.length; i++) {
       han1Cancel();
     }
     if (document.getElementById('q1-no').checked === true) {
-      q3.classList.remove('disabled');
-      q2.classList.add('disabled');
+      removeDisabled(q3);
+      addDisabled(q2);
     }
     if (document.getElementById('q1-yes').checked === true) {
-      q2.classList.remove('disabled');
-      q3.classList.add('disabled');
-      q4.classList.add('disabled');
-      q5.classList.add('disabled');
+      removeDisabled(q2);
+      addDisabled(q3);
+      addDisabled(q4);
+      addDisabled(q5);
       uncheckDisabled();
     }
   });
 }
 
-// 槓子の有無と値取得
+// 槓子の有無確認と値取得
 let ankan1Count = 0, ankan2Count = 0, minkan1Count = 0, minkan2Count = 0; // 初期値
-let ankan1 = document.getElementById('ankan1'); let ankan2 = document.getElementById('ankan2'); let minkan1 = document.getElementById('minkan1'); let minkan2 = document.getElementById('minkan2');
+const ankan1 = document.getElementById('ankan1'); const ankan2 = document.getElementById('ankan2'); const minkan1 = document.getElementById('minkan1'); const minkan2 = document.getElementById('minkan2');
 
-document.getElementById('ankan1+').addEventListener('click', function () {
-  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
-  if (kansTotal < 4) { ankan1Count++; ankan1.innerHTML = ankan1Count; }
-});
-document.getElementById('ankan1-').addEventListener('click', function () {
-  ankan1Count = 0; ankan1.innerHTML = ankan1Count;
-});
-document.getElementById('ankan2+').addEventListener('click', function () {
-  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
-  if (kansTotal < 4) { ankan2Count++; ankan2.innerHTML = ankan2Count; }
-});
-document.getElementById('ankan2-').addEventListener('click', function () {
-  ankan2Count = 0; ankan2.innerHTML = ankan2Count;
-});
-document.getElementById('minkan1+').addEventListener('click', function () {
-  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
-  if (kansTotal < 4) { minkan1Count++; minkan1.innerHTML = minkan1Count; }
-});
-document.getElementById('minkan1-').addEventListener('click', function () {
-  minkan1Count = 0; minkan1.innerHTML = minkan1Count;
-});
-document.getElementById('minkan2+').addEventListener('click', function () {
-  let kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
-  if (kansTotal < 4) { minkan2Count++; minkan2.innerHTML = minkan2Count; }
-});
-document.getElementById('minkan2-').addEventListener('click', function () {
-  minkan2Count = 0; minkan2.innerHTML = minkan2Count;
-});
+// カンをカウントした時の挙動
+const plusArea = document.querySelectorAll('.plus-area');
+for (i = 0; i < plusArea.length; i++) {
+  plusArea[i].addEventListener('click', function () {
+    const thisClass = this.className;
+    const kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+    if (kansTotal < 4) {
+      switch (thisClass) {
+        case 'plus-area ankan1+':
+          ankan1Count++; ankan1.innerHTML = ankan1Count;
+          break;
+        case 'plus-area ankan2+':
+          ankan2Count++; ankan2.innerHTML = ankan2Count;
+          break;
+        case 'plus-area minkan1+':
+          minkan1Count++; minkan1.innerHTML = minkan1Count;
+          break;
+        case 'plus-area minkan2+':
+          minkan2Count++; minkan2.innerHTML = minkan2Count;
+          break;
+        default:
+          break;
+      }
+    }
+  });
+}
 
+// 「0に戻す」ボタンの挙動
+const kanZero = document.querySelectorAll('.zero');
+for (i = 0; i < kanZero.length; i++) {
+  kanZero[i].addEventListener('click', function () {
+    const thisID = this.id;
+    switch (thisID) {
+      case 'ankan1-':
+        ankan1Count = 0; ankan1.innerHTML = ankan1Count;
+        break;
+      case 'ankan2-':
+        ankan2Count = 0; ankan2.innerHTML = ankan2Count;
+        break;
+      case 'minkan1-':
+        minkan1Count = 0; minkan1.innerHTML = minkan1Count;
+        break;
+      case 'minkan2-':
+        minkan2Count = 0; minkan2.innerHTML = minkan2Count;
+        break;
+      default:
+        break;
+    }
+  });
+}
 
 // ●得点計算と表示●
 document.getElementById('calculation').addEventListener('click', function () {
@@ -114,7 +140,7 @@ document.getElementById('calculation').addEventListener('click', function () {
     }
   })();
 
-  // 数値を識別
+  // 符数が確定しているか（変数fu_suに数値が入っているか）を識別
   if (isFinite(fu_su) === false) {
     return false;
   }
@@ -123,6 +149,7 @@ document.getElementById('calculation').addEventListener('click', function () {
   (function getKanFu() {
     let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan1Count * 20 + minkan2Count * 10;
 
+    // 平和か七対子の場合カンは起こりえないので槓子のカウントをしない
     if (document.getElementById('q3-yes').checked === true || document.getElementById('q4-yes').checked === true) {
       kan_fu = 0;
       fu_su += kan_fu;
@@ -133,15 +160,15 @@ document.getElementById('calculation').addEventListener('click', function () {
   })();
 
   // ③飜数取得
-  let elements = document.getElementsByName('han');
-  // 選択状態の値を取得
+  const elements = document.getElementsByName('han');
+  // 選択されているラジオボタンの値を取得
   for (let a = "", i = elements.length; i--;) {
     if (elements[i].checked) {
       let a = elements[i].value; // aには選択状態の値が代入されている
       han_su = a;
+      break;
     }
   }
-
 
   // ④符数と飜数に応じた点数
   if (document.getElementById('oya').checked === true) {
@@ -249,12 +276,13 @@ document.getElementById('calculation').addEventListener('click', function () {
   tsumo_result.innerHTML = tsumoAgari;
   result_display.style.display = 'block';
   document.getElementById('reset').style.display = 'inline';
-})
+});
 
 // リセット
+const kansCount = document.querySelectorAll('.count-value')
 document.getElementById('reset').addEventListener('click', function () {
   //ラジオボタン解除
-  let radioCheck = document.querySelectorAll('input:checked');
+  const radioCheck = document.querySelectorAll('input:checked');
   for (let i = 0; i < radioCheck.length; i++) {
     radioCheck[i].checked = false;
   }
@@ -266,20 +294,19 @@ document.getElementById('reset').addEventListener('click', function () {
   result_display.style.display = 'none';
   document.getElementById('reset').style.display = 'none';
   // 初期値に戻す
-  ankan1Count = 0; ankan2Count = 0; minkan1Count = 0; minkan2Count = 0;
   han1.checked = true
   han_su = 1;
-  fu_su = 'undefined';
+  fu_su = 'no_value';
   getPoint = '';
   tsumoAgari = '';
   document.getElementById('ko').checked = true;
   // 槓子の値を戻す
-  let kansCount = document.querySelectorAll('.count-value')
+  ankan1Count = 0; ankan2Count = 0; minkan1Count = 0; minkan2Count = 0;
   for (i = 0; i < kansCount.length; i++) {
     kansCount[i].innerHTML = '0';
   };
-  // Q1を初期化
-  q2.classList.add('disabled'); q3.classList.add('disabled'); q4.classList.add('disabled'); q5.classList.add('disabled');
+  // 質問のチェック状態の初期化
+  addDisabled(q2); addDisabled(q3); addDisabled(q4); addDisabled(q5);
 });
 
 //トップへ戻る

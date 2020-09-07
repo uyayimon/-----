@@ -6,12 +6,6 @@ body {
   max-width: 1000px;
   margin-bottom: 10em;
 }
-.no-margin-top {
-  margin-top: 0;
-}
-.no-margin-bottom {
-  margin-bottom: 0;
-}
 label {
   display:inline-block;
   cursor: pointer;
@@ -95,8 +89,8 @@ input[type=radio] {
   }
 }
 
-.kan {
-  .kan-example {
+#kan-wrapper {
+  .kan-count {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -104,11 +98,18 @@ input[type=radio] {
       display: flex;
     }
   }
-  .kan-count {
+  .plus-area {
+    user-select: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .count-box {
     border: 1px solid #666;
     margin: 0.1em;
-    padding: 0.5em;
+    padding: 0.3em;
     border-radius: 0.3em;
+
     >div {
       height: 50%;
     }
@@ -120,7 +121,6 @@ input[type=radio] {
     }
   }
   .tile {
-    margin-top: 5%;
     display: inline-flex;
     align-items: flex-end;
     img{
@@ -136,17 +136,8 @@ input[type=radio] {
       flex-direction: column;
     }
   }
-  .count {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .count-value {
-      font-size: 1.5em;
-    }
-  }
-  .plus {
-    cursor: pointer;
-    user-select: none;
+  .count-value {
+    font-size: 1.5em;
   }
   .zero {
     cursor: pointer;
@@ -155,6 +146,9 @@ input[type=radio] {
     user-select: none;
     padding: 1%;
     border-radius: 0.5em;
+    &:hover {
+      background-color: lightgrey;
+    }
   }
 }
 
@@ -202,7 +196,7 @@ input[type=radio] {
   }
   #calculation {
     cursor: pointer;
-    height: 5em;
+    height: 4em;
     width: 45%;
     font-size: 1.1em;
   }
@@ -257,14 +251,15 @@ input[type=radio] {
       width: 100%;
     }
   }
-  .kan-example {
+  .kan-count {
     font-size: 1.3em;
     >div {
       flex-direction: column;
     }
   }
-  .kan-count {
+  .count-box {
     display: flex;
-    width: 90%;
+    justify-content: space-between;
+    width: 95%;
   }
 }
