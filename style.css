@@ -124,6 +124,10 @@ input[type=radio]:checked + label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #kan-wrapper .kan-count > div {
@@ -132,22 +136,15 @@ input[type=radio]:checked + label {
   display: flex;
 }
 
-#kan-wrapper .plus-area {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-#kan-wrapper .plus-area:hover {
-  cursor: pointer;
-}
-
 #kan-wrapper .count-box {
   border: 1px solid #666;
   margin: 0.1em;
-  padding: 0.3em;
+  padding: 0.5em;
   border-radius: 0.3em;
+}
+
+#kan-wrapper .count-box:hover {
+  cursor: pointer;
 }
 
 #kan-wrapper .count-box > div {

@@ -1,11 +1,11 @@
 const q1 = document.getElementById('q1'); const q2 = document.getElementById('q2'); const q3 = document.getElementById('q3'); const q4 = document.getElementById('q4'); const q5 = document.getElementById('q5');
 const han1 = document.getElementById('1han');
-// const kan = document.getElementById('kan-wrapper');
+
 const fu_result = document.getElementById('fu_result');
 const han_result = document.getElementById('han-result');
 const ten_result = document.getElementById('ten-result');
 const tsumo_result = document.getElementById('tsumo-result');
-const result_display = document.getElementById('result_display')
+const result_display = document.getElementById('result_display');
 
 let fu_su = 'no_value';
 
@@ -66,23 +66,23 @@ let ankan1Count = 0, ankan2Count = 0, minkan1Count = 0, minkan2Count = 0; // 初
 const ankan1 = document.getElementById('ankan1'); const ankan2 = document.getElementById('ankan2'); const minkan1 = document.getElementById('minkan1'); const minkan2 = document.getElementById('minkan2');
 
 // カンをカウントした時の挙動
-const plusArea = document.querySelectorAll('.plus-area');
-for (i = 0; i < plusArea.length; i++) {
-  plusArea[i].addEventListener('click', function () {
-    const thisClass = this.className;
+const kanPlus = document.querySelectorAll('.count-box');
+for (i = 0; i < kanPlus.length; i++) {
+  kanPlus[i].addEventListener('click', function () {
+    const plusID = this.id;
     const kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
     if (kansTotal < 4) {
-      switch (thisClass) {
-        case 'plus-area ankan1+':
+      switch (plusID) {
+        case 'ankan1+':
           ankan1Count++; ankan1.innerHTML = ankan1Count;
           break;
-        case 'plus-area ankan2+':
+        case 'ankan2+':
           ankan2Count++; ankan2.innerHTML = ankan2Count;
           break;
-        case 'plus-area minkan1+':
+        case 'minkan1+':
           minkan1Count++; minkan1.innerHTML = minkan1Count;
           break;
-        case 'plus-area minkan2+':
+        case 'minkan2+':
           minkan2Count++; minkan2.innerHTML = minkan2Count;
           break;
         default:
@@ -95,9 +95,10 @@ for (i = 0; i < plusArea.length; i++) {
 // 「0に戻す」ボタンの挙動
 const kanZero = document.querySelectorAll('.zero');
 for (i = 0; i < kanZero.length; i++) {
-  kanZero[i].addEventListener('click', function () {
-    const thisID = this.id;
-    switch (thisID) {
+  kanZero[i].addEventListener('click', function (event) {
+    event.stopPropagation(); // プラスされないようにする
+    const zeroID = this.id;
+    switch (zeroID) {
       case 'ankan1-':
         ankan1Count = 0; ankan1.innerHTML = ankan1Count;
         break;
@@ -119,7 +120,7 @@ for (i = 0; i < kanZero.length; i++) {
 // ●得点計算と表示●
 document.getElementById('calculation').addEventListener('click', function () {
 
-  // ①符数取得
+  // 符数取得
   (function getFusu() {
     if (document.getElementById('q1-yes').checked === true) {
       if (document.getElementById('q2-yes').checked === true) { fu_su = 40; }
@@ -145,7 +146,7 @@ document.getElementById('calculation').addEventListener('click', function () {
     return false;
   }
 
-  // ②カンによる符をカウント
+  // カンによる符をカウント
   (function getKanFu() {
     let kan_fu = ankan1Count * 30 + ankan2Count * 20 + minkan1Count * 20 + minkan2Count * 10;
 
@@ -159,18 +160,23 @@ document.getElementById('calculation').addEventListener('click', function () {
     }
   })();
 
-  // ③飜数取得
+  // 飜数取得
   const elements = document.getElementsByName('han');
   // 選択されているラジオボタンの値を取得
   for (let a = "", i = elements.length; i--;) {
     if (elements[i].checked) {
-      let a = elements[i].value; // aには選択状態の値が代入されている
+      a = elements[i].value; // aには選択状態の値が代入されている
       han_su = a;
       break;
     }
   }
+  //四槓子
+  const kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
+  if (kansTotal === 4) {
+    han_su = 13;
+  }
 
-  // ④符数と飜数に応じた点数
+  // 符数と飜数に応じた点数
   if (document.getElementById('oya').checked === true) {
     if (han_su == 1) {
       if (fu_su == 20) { alert('20符1飜のアガりはありません'); return false; }
@@ -276,7 +282,7 @@ document.getElementById('calculation').addEventListener('click', function () {
   tsumo_result.innerHTML = tsumoAgari;
   result_display.style.display = 'block';
   document.getElementById('reset').style.display = 'inline';
-});
+})
 
 // リセット
 const kansCount = document.querySelectorAll('.count-value')
@@ -307,9 +313,11 @@ document.getElementById('reset').addEventListener('click', function () {
   };
   // 質問のチェック状態の初期化
   addDisabled(q2); addDisabled(q3); addDisabled(q4); addDisabled(q5);
-});
+  //トップへ戻る
+  scrollTo(0, 0);
+})
 
-//トップへ戻る
+//ページトップへ
 document.getElementById('to-top').addEventListener('click', function () {
   scrollTo(0, 0);
 })
