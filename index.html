@@ -14,25 +14,25 @@
   </header>
 
   <main>
-    <h2 class="chapter">おなたは親？子？</h2>
     <section id="oyaOrKo-wrapper">
+      <h1 class="chapter">おなたは親？子？</h1>
       <div class="choices">
         <input type="radio" name="oyaKo" id="oya"><label for="oya">親</label>
         <input type="radio" name="oyaKo" id="ko" checked><label for="ko">子</label>
       </div>
     </section>
 
-    <h2 class="chapter">飜数</h2>
     <section id="han-wrapper">
+      <h1 class="chapter">飜数</h1>
       <div class="choices">
         <div class="han">
           <input type="radio" name="han" id="1han" value="1" checked><label for="1han">1飜</label>
           <input type="radio" name="han" id="2han" value="2"><label for="2han">2飜</label>
           <input type="radio" name="han" id="3han" value="3"><label for="3han">3飜</label>
           <input type="radio" name="han" id="4han" value="4"><label for="4han">4飜</label>
-          <label for="label1" id="over5label">5飜～ ▼</label>
+          <label for="over5input" id="over5label">5飜～ ▼</label>
           <div class="hidden_box">
-            <input type="checkbox" id="label1" />
+            <input type="checkbox" id="over5input">
             <div class="hidden_show">
               <input type="radio" name="han" id="5han" value="5"><label for="5han">5飜</label>
               <input type="radio" name="han" id="6han" value="6"><label for="6han">6飜</label>
@@ -49,7 +49,6 @@
       </div>
     </section>
 
-    <h2 class="chapter"></h2>
     <section id="questions-wrapper">
       <div class="question" id="q1">
         <p>ポンかチーしてる？</p>
@@ -88,75 +87,75 @@
       </div>
     </section>
 
-    <h2 class="chapter">カンした？</h2>
     <section id="kan-wrapper">
-      <p>カンをしているとたくさん符が追加されるよ！槓子を数えよう！<br><span><i class="fas fa-arrow-circle-down fa-lg"></i>してない場合はこのまま「計算する」</span></p>
-      <p style="font-size: small;margin: 0; color: red;">クリック or タップしてカウント</p>
+      <h1 class="chapter">カンした？</h1>
+      <p>カンをしているとたくさん符が追加されるよ！槓子を数えよう！<br>↓してない場合はこのまま「計算する」</p>
+      <p style="font-size: small; margin: 0; color: red;">クリック or タップしてカウント</p>
       <div class="kan-count">
-        <div>
+        <div class="two-boxes">
           <div class="count-box" id="ankan1+">
-            <div>
+            <div class="inner-box">
               <p>暗カン<br>(1,9,字牌)</p>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif" ALT="一萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif" ALT="一萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ms1_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif">
               </div>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ji_e_1.gif" ALT="東：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ji_e_1.gif" ALT="東：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ji_e_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ji_e_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif">
               </div>
             </div>
-            <div>
+            <div class="inner-box">
               <p>1組毎に <span>+30符</span></p>
               <p><span class="count-value" id="ankan1">0</span> 組</p>
               <p class="zero" id="ankan1-">0に戻す</p>
             </div>
           </div>
           <div class="count-box" id="ankan2+">
-            <div>
+            <div class="inner-box">
               <p>暗カン<br>(2～8牌)</p>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif" ALT="五萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif" ALT="五萬：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ms5_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif">
               </div>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps4_1.gif" ALT="四筒：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps4_1.gif" ALT="四筒：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif" ALT="裏：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ps4_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ps4_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_bk_1.gif">
               </div>
             </div>
-            <div>
+            <div class="inner-box">
               <p>1組毎に <span>+20符</span></p>
               <p><span class="count-value" id="ankan2">0</span> 組</p>
-              <p class=" zero" id="ankan2-">0に戻す</p>
+              <p class="zero" id="ankan2-">0に戻す</p>
             </div>
           </div>
         </div>
-        <div>
+        <div class="two-boxes">
           <div class="count-box" id="minkan1+">
-            <div>
+            <div class="inner-box">
               <p>暗カン以外<br>(1,9,字牌)</p>
               <div class="tile">
-                <img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss1_3.gif" ALT="一索横：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif" ALT="一索：麻雀王国">
+                <img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss1_3.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ss1_1.gif">
               </div>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_ji_s_1.gif" ALT="南：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ji_s_1.gif" ALT="南：麻雀王国">
-                <div class="kakan"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ji_s_3.gif" ALT="南横：麻雀王国"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ji_s_3.gif" ALT="南横：麻雀王国"></div>
+                <img src="https://mj-king.net/sozai/paiga/images/p_ji_s_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ji_s_1.gif">
+                <div class="kakan"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ji_s_3.gif"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ji_s_3.gif"></div>
               </div>
             </div>
-            <div>
+            <div class="inner-box">
               <p>1組毎に <span>+20符</span></p>
               <p><span class="count-value" id="minkan1">0</span> 組</p>
               <p class="zero" id="minkan1-">0に戻す</p>
             </div>
           </div>
           <div class="count-box" id="minkan2+">
-            <div>
+            <div class="inner-box">
               <p>暗カン以外<br>(2～8牌)</p>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ps6_3.gif" ALT="六筒横：麻雀王国"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif" ALT="六筒：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ps6_3.gif"><img src="https://mj-king.net/sozai/paiga/images/p_ps6_1.gif">
               </div>
               <div class="tile">
-                <img src="https://mj-king.net/sozai/paiga/images/p_ss3_1.gif" ALT="三索：麻雀王国">
-                <div class="kakan"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss3_3.gif" ALT="三索横：麻雀王国"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss3_3.gif" ALT="三索横：麻雀王国"></div><img src="https://mj-king.net/sozai/paiga/images/p_ss3_1.gif" ALT="三索：麻雀王国">
+                <img src="https://mj-king.net/sozai/paiga/images/p_ss3_1.gif">
+                <div class="kakan"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss3_3.gif"><img class="yoko" src="https://mj-king.net/sozai/paiga/images/p_ss3_3.gif"></div><img src="https://mj-king.net/sozai/paiga/images/p_ss3_1.gif">
               </div>
             </div>
-            <div>
+            <div class="inner-box">
               <p>1組毎に <span>+10符</span></p>
               <p><span class="count-value" id="minkan2">0</span> 組</p>
               <p class="zero" id="minkan2-">0に戻す</p>
@@ -168,229 +167,230 @@
 
     <hr>
 
-    <h2>点数表</h2>
-    <section id="list">
+    <section id="pointtables-wrapper">
+      <h1>点数表</h1>
       <p>正確な点数表です。<br>暗刻が多かったりカンがあると符が繰り上がる可能性があります。<br>麻雀に慣れてきたら正しい符計算も覚えてみましょう！</p>
-      <h3>親の場合(カッコ内はツモの点数）</h3>
-      <div id="tabbody">
-        <div class="pointtables" id="tabpage1">
-          <table class="tableborder oya-points">
+
+      <p class="caption">親の場合(カッコ内はツモの点数）</p>
+      <div class="pointtables">
+        <table class="oya-points">
+          <tr>
+            <th>&nbsp;</th>
+            <th>1飜</th>
+            <th>2飜</th>
+            <th>3飜</th>
+            <th>4飜</th>
+          </tr>
+          <tr>
+            <th>20符</th>
+            <td class="back-gray">20符は<br>平和ツモのみ</td>
+            <td>(700オール)</td>
+            <td>(1300オール)</td>
+            <td>(2600オール)</td>
+          </tr>
+          <tr>
+            <th>25符</th>
+            <td class="back-gray">25符は<br>七対子のみ</td>
+            <td>2400<br>(800オール)</td>
+            <td>4800<br>(1600オール)</td>
+            <td>9600<br>(3200オール)</td>
+          </tr>
+          <tr>
+            <th>30符</th>
+            <td>1500<br>(500オール)</td>
+            <td>2900<br>(1000オール)</td>
+            <td>5800<br>(2000オール)</td>
+            <td>11600<br>(3900オール)</td>
+          </tr>
+          <tr>
+            <th>40符</th>
+            <td>2000<br>(700オール)</td>
+            <td>3900<br>(1300オール)</td>
+            <td>7700<br>(2600オール)</td>
+            <td rowspan="8">12000<br>(4000オール)</td>
+          </tr>
+          <tr>
+            <th>50符</th>
+            <td>2400<br>(800オール)</td>
+            <td>4800<br>(1600オール)</td>
+            <td>9600<br>(3200オール)</td>
+          </tr>
+          <tr>
+            <th>60符</th>
+            <td>2900<br>(1000オール)</td>
+            <td>5800<br>(2000オール)</td>
+            <td>11600<br>(3900オール)</td>
+          </tr>
+          <tr>
+            <th>70符</th>
+            <td>3400<br>(1200オール)</td>
+            <td>6800<br>(2300オール)</td>
+            <td rowspan="5">12000<br>(4000オール)</td>
+          </tr>
+          <tr>
+            <th>80符</th>
+            <td>3900<br>(1300オール)</td>
+            <td>7700<br>(2600オール)</td>
+          </tr>
+          <tr>
+            <th>90符</th>
+            <td>4400<br>(1500オール)</td>
+            <td>8700<br>(2900オール)</td>
+          </tr>
+          <tr>
+            <th>100符</th>
+            <td>4800<br>(1600オール)</td>
+            <td>9600<br>(3200オール)</td>
+          </tr>
+          <tr>
+            <th>110符</th>
+            <td>5300<br>(1800オール)</td>
+            <td>10600<br>(3600オール)</td>
+          </tr>
+        </table>
+
+        <div class="over5">
+          <table class="oya-points">
             <tr>
-              <th>&nbsp;</th>
-              <th>1飜</th>
-              <th>2飜</th>
-              <th>3飜</th>
-              <th>4飜</th>
+              <th>5飜</th>
+              <th>6～7飜</th>
+              <th>8～10飜</th>
             </tr>
             <tr>
-              <th>20符</th>
-              <td style="background: #eeeeee">20符は<br>平和ツモのみ</td>
-              <td>(700オール)</td>
-              <td>(1300オール)</td>
-              <td>(2600オール)</td>
-            </tr>
-            <tr>
-              <th>25符</th>
-              <td style="background: #eeeeee">25符は<br>七対子のみ</td>
-              <td>2400<br>(800オール)</td>
-              <td>4800<br>(1600オール)</td>
-              <td>9600<br>(3200オール)</td>
-            </tr>
-            <tr>
-              <th>30符</th>
-              <td>1500<br>(500オール)</td>
-              <td>2900<br>(1000オール)</td>
-              <td>5800<br>(2000オール)</td>
-              <td>11600<br>(3900オール)</td>
-            </tr>
-            <tr>
-              <th>40符</th>
-              <td>2000<br>(700オール)</td>
-              <td>3900<br>(1300オール)</td>
-              <td>7700<br>(2600オール)</td>
-              <td rowspan="8">12000<br>(4000オール)</td>
-            </tr>
-            <tr>
-              <th>50符</th>
-              <td>2400<br>(800オール)</td>
-              <td>4800<br>(1600オール)</td>
-              <td>9600<br>(3200オール)</td>
-            </tr>
-            <tr>
-              <th>60符</th>
-              <td>2900<br>(1000オール)</td>
-              <td>5800<br>(2000オール)</td>
-              <td>11600<br>(3900オール)</td>
-            </tr>
-            <tr>
-              <th>70符</th>
-              <td>3400<br>(1200オール)</td>
-              <td>6800<br>(2300オール)</td>
-              <td rowspan="5">12000<br>(4000オール)</td>
-            </tr>
-            <tr>
-              <th>80符</th>
-              <td>3900<br>(1300オール)</td>
-              <td>7700<br>(2600オール)</td>
-            </tr>
-            <tr>
-              <th>90符</th>
-              <td>4400<br>(1500オール)</td>
-              <td>8700<br>(2900オール)</td>
-            </tr>
-            <tr>
-              <th>100符</th>
-              <td>4800<br>(1600オール)</td>
-              <td>9600<br>(3200オール)</td>
-            </tr>
-            <tr>
-              <th>110符</th>
-              <td>5300<br>(1800オール)</td>
-              <td>10600<br>(3600オール)</td>
+              <td>12000<br>(4000オール)</td>
+              <td>18000<br>(6000オール)</td>
+              <td>24000<br>(8000オール)</td>
             </tr>
           </table>
 
-          <div class="over5">
-            <table class="tableborder oya-points">
-              <tr>
-                <th>5飜</th>
-                <th>6～7飜</th>
-                <th>8～10飜</th>
-              </tr>
-              <tr>
-                <td>12000<br>(4000オール)</td>
-                <td>18000<br>(6000オール)</td>
-                <td>24000<br>(8000オール)</td>
-              </tr>
-            </table>
-
-            <table class="tableborder oya-points">
-              <tr>
-                <th>11～12飜</th>
-                <th>13飜</th>
-              </tr>
-              <tr>
-                <td>36000<br>(12000オール)</td>
-                <td>48000<br>(16000オール)</td>
-              </tr>
-            </table>
-          </div>
+          <table class="oya-points">
+            <tr>
+              <th>11～12飜</th>
+              <th>13飜</th>
+            </tr>
+            <tr>
+              <td>36000<br>(12000オール)</td>
+              <td>48000<br>(16000オール)</td>
+            </tr>
+          </table>
         </div>
+      </div>
 
-        <h3>子の場合(カッコ内はツモの点数）</h3>
-        <div class="pointtables" id="tabpage2">
-          <table class="tableborder ko-points">
+      <p class="caption">子の場合(カッコ内はツモの点数）</p>
+      <div class="pointtables">
+        <table class="ko-points">
+          <tr>
+            <th>&nbsp;</th>
+            <th>1飜</th>
+            <th>2飜</th>
+            <th>3飜</th>
+            <th>4飜</th>
+          </tr>
+          <tr>
+            <th>20符</th>
+            <td class="back-gray">20符は<br>平和ツモのみ</td>
+            <td>(400,700)</td>
+            <td>(700,1300)</td>
+            <td>(1300,2600)</td>
+          </tr>
+          <tr>
+            <th>25符</th>
+            <td class="back-gray">25符は<br>七対子のみ</td>
+            <td>1600<br>(400,800)</td>
+            <td>3200<br>(800,1600)</td>
+            <td>6400<br>(1600,3200)</td>
+          </tr>
+          <tr>
+            <th>30符</th>
+            <td>1000<br>(300,500)</td>
+            <td>2000<br>(500,1000)</td>
+            <td>3900<br>(1000,2000)</td>
+            <td>7700<br>(2000,3900)</td>
+          </tr>
+          <tr>
+            <th>40符</th>
+            <td>1300<br>(400,700)</td>
+            <td>2600<br>(700,1300)</td>
+            <td>5200<br>(1300,2600)</td>
+            <td rowspan="8">8000<br>(2000,4000)</td>
+          </tr>
+          <tr>
+            <th>50符</th>
+            <td>1600<br>(400,800)</td>
+            <td>3200<br>(800,1600)</td>
+            <td>6400<br>(1600,3200)</td>
+          </tr>
+          <tr>
+            <th>60符</th>
+            <td>2000<br>(500,1000)</td>
+            <td>3900<br>(1000,2000)</td>
+            <td>7700<br>(2000,3900)</td>
+          </tr>
+          <tr>
+            <th>70符</th>
+            <td>2300<br>(600,1200)</td>
+            <td>4500<br>(1200,2300)</td>
+            <td rowspan="5">8000<br>(2000,4000)</td>
+          </tr>
+          <tr>
+            <th>80符</th>
+            <td>2600<br>(700,1300)</td>
+            <td>5200<br>(1300,2600)</td>
+          </tr>
+          <tr>
+            <th>90符</th>
+            <td>2900<br>(800,1500)</td>
+            <td>5800<br>(1500,2900)</td>
+          </tr>
+          <tr>
+            <th>100符</th>
+            <td>3200<br>(800,1600)</td>
+            <td>6400<br>(1600,3200)</td>
+          </tr>
+          <tr>
+            <th>110符</th>
+            <td>3600<br>(900,1800)</td>
+            <td>7100<br>(1800,3600)</td>
+          </tr>
+        </table>
+
+        <div class="over5">
+          <table class="ko-points">
             <tr>
-              <th>&nbsp;</th>
-              <th>1飜</th>
-              <th>2飜</th>
-              <th>3飜</th>
-              <th>4飜</th>
+              <th>5飜</th>
+              <th>6～7飜</th>
+              <th>8～10飜</th>
             </tr>
             <tr>
-              <th>20符</th>
-              <td style="background: #eeeeee">20符は<br>平和ツモのみ</td>
-              <td>(400,700)</td>
-              <td>(700,1300)</td>
-              <td>(1300,2600)</td>
-            </tr>
-            <tr>
-              <th>25符</th>
-              <td style="background: #eeeeee">25符は<br>七対子のみ</td>
-              <td>1600<br>(400,800)</td>
-              <td>3200<br>(800,1600)</td>
-              <td>6400<br>(1600,3200)</td>
-            </tr>
-            <tr>
-              <th>30符</th>
-              <td>1000<br>(300,500)</td>
-              <td>2000<br>(500,1000)</td>
-              <td>3900<br>(1000,2000)</td>
-              <td>7700<br>(2000,3900)</td>
-            </tr>
-            <tr>
-              <th>40符</th>
-              <td>1300<br>(400,700)</td>
-              <td>2600<br>(700,1300)</td>
-              <td>5200<br>(1300,2600)</td>
-              <td rowspan="8">8000<br>(2000,4000)</td>
-            </tr>
-            <tr>
-              <th>50符</th>
-              <td>1600<br>(400,800)</td>
-              <td>3200<br>(800,1600)</td>
-              <td>6400<br>(1600,3200)</td>
-            </tr>
-            <tr>
-              <th>60符</th>
-              <td>2000<br>(500,1000)</td>
-              <td>3900<br>(1000,2000)</td>
-              <td>7700<br>(2000,3900)</td>
-            </tr>
-            <tr>
-              <th>70符</th>
-              <td>2300<br>(600,1200)</td>
-              <td>4500<br>(1200,2300)</td>
-              <td rowspan="5">8000<br>(2000,4000)</td>
-            </tr>
-            <tr>
-              <th>80符</th>
-              <td>2600<br>(700,1300)</td>
-              <td>5200<br>(1300,2600)</td>
-            </tr>
-            <tr>
-              <th>90符</th>
-              <td>2900<br>(800,1500)</td>
-              <td>5800<br>(1500,2900)</td>
-            </tr>
-            <tr>
-              <th>100符</th>
-              <td>3200<br>(800,1600)</td>
-              <td>6400<br>(1600,3200)</td>
-            </tr>
-            <tr>
-              <th>110符</th>
-              <td>3600<br>(900,1800)</td>
-              <td>7100<br>(1800,3600)</td>
+              <td>8000<br>(2000,4000)</td>
+              <td>12000<br>(3000,6000)</td>
+              <td>16000<br>(4000,8000)</td>
             </tr>
           </table>
 
-          <div class="over5">
-            <table class="tableborder ko-points">
-              <tr>
-                <th>5飜</th>
-                <th>6～7飜</th>
-                <th>8～10飜</th>
-              </tr>
-              <tr>
-                <td>8000<br>(2000,4000)</td>
-                <td>12000<br>(3000,6000)</td>
-                <td>16000<br>(4000,8000)</td>
-              </tr>
-            </table>
-
-            <table class="tableborder ko-points">
-              <tr>
-                <th>11～12飜</th>
-                <th>13飜</th>
-              </tr>
-              <tr>
-                <td>24000<br>(6000,12000)</td>
-                <td>32000<br>(8000,16000)</td>
-              </tr>
-            </table>
-          </div>
+          <table class="ko-points">
+            <tr>
+              <th>11～12飜</th>
+              <th>13飜</th>
+            </tr>
+            <tr>
+              <td>24000<br>(6000,12000)</td>
+              <td>32000<br>(8000,16000)</td>
+            </tr>
+          </table>
         </div>
       </div>
     </section>
 
     <section id="result">
-      <p id="result_display">だいたい <span id="fu_result">？</span> 符 <span id="han-result">？</span> 飜 ： <span id="ten-result">？</span> 点 <br><span id="tsumo-result"></span></p>
-      <button id="calculation">計算する</button>
-      <button id="reset">リセット</button>
-      <div id="to-top">
-        <img src="icon\icons8-upward-arrow-48.png" alt="ページトップ"></i>
-        <p>ページトップへ</p>
+      <p id="result_display">だいたい <span id="fu_result">？</span> 符 <span id="han_result">？</span> 飜 ： <span id="ten_result">？</span> 点 <br><span id="tsumo_result"></span></p>
+      <div class="buttons">
+        <button id="calculation">計算する</button>
+        <button id="reset">リセット</button>
+        <div id="to-top">
+          <div class="arrow"></div>
+          <p>ページトップへ</p>
+        </div>
       </div>
     </section>
   </main>
