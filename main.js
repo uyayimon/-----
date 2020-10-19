@@ -210,7 +210,8 @@ document.getElementById('calculation').addEventListener('click', function () {
     if (han_su == 4) {
       if (fu_su == 20) { getPoint = 7700; tsumoAgari = '(2600オール)'; }
       if (fu_su == 25) { getPoint = 9600; tsumoAgari = '(ツモアガりなら3200オール)'; }
-      if (fu_su >= 30) { getPoint = 11600; tsumoAgari = '(ツモアガりなら3900オール)'; }
+      if (fu_su == 30) { getPoint = 11600; tsumoAgari = '(ツモアガりなら3900オール)'; }
+      if (fu_su >= 40) { getPoint = 12000; tsumoAgari = '(ツモアガりなら4000オール)'; }
     }
 
     if (han_su == 5) { getPoint = 12000; tsumoAgari = '(ツモアガりなら4000オール)'; }
