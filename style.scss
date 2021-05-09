@@ -1,5 +1,5 @@
 body {
-  font-family: '游ゴシック体', 'Yu Gothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
   font-weight: 500;
   margin: 0 auto;
   text-align: center;
@@ -8,6 +8,11 @@ body {
 }
 section {
   margin-top: 2em;
+}
+header {
+  h1 {
+    font-size: 1.5em;
+  }
 }
 label {
   display: inline-block;
@@ -20,11 +25,11 @@ label {
   margin: 0.1em;
   padding: 0.3em 0;
 }
-input[type=radio] {
+input[type="radio"] {
   display: none;
   &:checked + label {
-  background-color: palevioletred;
-  color: #ffffff;
+    background-color: palevioletred;
+    color: #ffffff;
   }
 }
 .chapter {
@@ -42,7 +47,6 @@ input[type=radio] {
     opacity: 1;
   }
 }
-
 #over5input {
   display: none;
 }
@@ -79,7 +83,7 @@ input[type=radio] {
     color: rgb(106, 206, 201);
     user-select: none;
   }
-  input[type=radio] {
+  input[type="radio"] {
     &:checked + label.yes {
       background-color: rgb(250, 169, 183);
     }
@@ -111,10 +115,12 @@ input[type=radio] {
     font-weight: bold;
   }
 }
+
+// 牌の画像
 .tile {
   display: inline-flex;
   align-items: flex-end;
-  img{
+  img {
     width: 19px;
     height: 26px;
   }
@@ -135,6 +141,7 @@ input[type=radio] {
   border: 1px solid #666;
   user-select: none;
   border-radius: 0.5em;
+  padding: 0.2em;
   &:hover {
     background-color: lightgrey;
   }
@@ -159,7 +166,7 @@ input[type=radio] {
   th {
     white-space: nowrap;
     width: 7em;
-    border:solid 1px #666;
+    border: solid 1px #666;
   }
   td {
     width: 7em;
@@ -185,39 +192,32 @@ input[type=radio] {
   bottom: 0;
   left: 0;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
 }
 #result_display {
+  margin-left: auto;
   display: none;
+  p {
+    margin: 0;
+  }
 }
-button {
+button#reset {
   border-radius: 1em;
-}
-.buttons {
-  display: flex;
-}
-#calculation {
-  cursor: pointer;
   height: 4em;
-  width: 50%;
-  font-size: 1.1em;
-  margin: auto 0 auto auto;
-}
-#reset {
-  display: none;
-  height: 4em;
-  margin: auto 0.5em;
+  margin: auto 1em auto auto;
+  font-size: 0.7em;
 }
 #ten_result {
   font-weight: bold;
   font-size: 1.3em;
 }
 #to-top {
-  margin: auto 1em auto auto;
-  z-index: 2;
+  margin: auto 1em;
   opacity: 0.7;
   p {
     margin: 0;
-    font-size: 0.6em;
+    font-size: 0.5em;
   }
   &:hover {
     cursor: pointer;
@@ -225,6 +225,7 @@ button {
   }
 }
 
+// ページトップへ
 .arrow {
   display: inline-block;
   color: #fff;
@@ -232,13 +233,13 @@ button {
   background-color: #666;
   border-radius: 5px;
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 .arrow::before {
-  content: '';
-  width: 20px;
-  height: 20px;
+  content: "";
+  width: 15px;
+  height: 15px;
   display: block;
   border-top: solid 2px;
   border-right: solid 2px;
@@ -250,6 +251,7 @@ button {
   right: 0;
   margin: auto;
 }
+
 .tweet {
   display: inline-block;
 }
@@ -258,7 +260,7 @@ button {
   pointer-events: none;
 }
 
-@media (min-width:600px) {
+@media (min-width: 600px) {
   .chapter {
     font-size: 1.5em;
   }
