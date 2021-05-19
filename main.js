@@ -1,13 +1,13 @@
-const oya_mantsumo = "(ツモアガりなら4000オール)";
-const oya_hanetsumo = "(ツモアガりなら6000オール)";
-const oya_baitsumo = "(ツモアガりなら8000オール)";
-const oya_3baitsumo = "(ツモアガりなら12000オール)";
-const oya_yakutsumo = "(ツモアガりなら16000オール)";
-const ko_mantsumo = "(ツモアガりなら2000,4000)";
-const ko_hanetsumo = "(ツモアガりなら3000,6000)";
-const ko_baitsumo = "(ツモアガりなら4000,8000)";
-const ko_3baitsumo = "(ツモアガりなら6000,12000)";
-const ko_yakutsumo = "(ツモアガりなら8000,16000)";
+const OYA_MANTSUMO = "(ツモアガりなら4000オール)";
+const OYA_HANETSUMO = "(ツモアガりなら6000オール)";
+const OYA_BAITSUMO = "(ツモアガりなら8000オール)";
+const OYA_3BAITSUMO = "(ツモアガりなら12000オール)";
+const OYA_YAKUTSUMO = "(ツモアガりなら16000オール)";
+const KO_MANTSUMO = "(ツモアガりなら2000,4000)";
+const KO_HANETSUMO = "(ツモアガりなら3000,6000)";
+const KO_BAITSUMO = "(ツモアガりなら4000,8000)";
+const KO_3BAITSUMO = "(ツモアガりなら6000,12000)";
+const KO_YAKUTSUMO = "(ツモアガりなら8000,16000)";
 
 // { 親or子 { 翻数 { 符数[得点, ツモ上がり時の回収] } } }
 const pointsArray = {
@@ -44,35 +44,35 @@ const pointsArray = {
       30: [5800, "(ツモアガりなら2000オール)"],
       40: [7700, "(ツモアガりなら2600オール)"],
       50: [9600, "(ツモアガりなら3200オール)"],
-      60: [12000, oya_mantsumo],
-      70: [12000, oya_mantsumo],
-      80: [12000, oya_mantsumo],
-      90: [12000, oya_mantsumo],
-      100: [12000, oya_mantsumo],
-      110: [12000, oya_mantsumo],
+      60: [12000, OYA_MANTSUMO],
+      70: [12000, OYA_MANTSUMO],
+      80: [12000, OYA_MANTSUMO],
+      90: [12000, OYA_MANTSUMO],
+      100: [12000, OYA_MANTSUMO],
+      110: [12000, OYA_MANTSUMO],
     },
     4: {
       20: [7700, "(2600オール)"],
       25: [9600, "(ツモアガりなら3200オール)"],
       30: [11600, "(ツモアガりなら3900オール)"],
-      40: [12000, oya_mantsumo],
-      50: [12000, oya_mantsumo],
-      60: [12000, oya_mantsumo],
-      70: [12000, oya_mantsumo],
-      80: [12000, oya_mantsumo],
-      90: [12000, oya_mantsumo],
-      100: [12000, oya_mantsumo],
-      110: [12000, oya_mantsumo],
+      40: [12000, OYA_MANTSUMO],
+      50: [12000, OYA_MANTSUMO],
+      60: [12000, OYA_MANTSUMO],
+      70: [12000, OYA_MANTSUMO],
+      80: [12000, OYA_MANTSUMO],
+      90: [12000, OYA_MANTSUMO],
+      100: [12000, OYA_MANTSUMO],
+      110: [12000, OYA_MANTSUMO],
     },
-    5: [12000, oya_mantsumo],
-    6: [18000, oya_hanetsumo],
-    7: [18000, oya_hanetsumo],
-    8: [24000, oya_baitsumo],
-    9: [24000, oya_baitsumo],
-    10: [24000, oya_baitsumo],
-    11: [32000, oya_3baitsumo],
-    12: [32000, oya_3baitsumo],
-    13: [48000, oya_yakutsumo],
+    5: [12000, OYA_MANTSUMO],
+    6: [18000, OYA_HANETSUMO],
+    7: [18000, OYA_HANETSUMO],
+    8: [24000, OYA_BAITSUMO],
+    9: [24000, OYA_BAITSUMO],
+    10: [24000, OYA_BAITSUMO],
+    11: [32000, OYA_3BAITSUMO],
+    12: [32000, OYA_3BAITSUMO],
+    13: [48000, OYA_YAKUTSUMO],
   },
   ko: {
     1: {
@@ -108,34 +108,34 @@ const pointsArray = {
       40: [5200, "(ツモアガりなら1300,2600)"],
       50: [6400, "(ツモアガりなら1600,3200)"],
       60: [7700, "(ツモアガりなら2000,3900)"],
-      70: [8000, ko_mantsumo],
-      80: [8000, ko_mantsumo],
-      90: [8000, ko_mantsumo],
-      100: [8000, ko_mantsumo],
-      110: [8000, ko_mantsumo],
+      70: [8000, KO_MANTSUMO],
+      80: [8000, KO_MANTSUMO],
+      90: [8000, KO_MANTSUMO],
+      100: [8000, KO_MANTSUMO],
+      110: [8000, KO_MANTSUMO],
     },
     4: {
       20: [5200, "(1300,2600)"],
       25: [6400, "(ツモアガりなら1600,3200)"],
       30: [7700, "(ツモアガりなら2000,3900)"],
-      40: [8000, ko_mantsumo],
-      50: [8000, ko_mantsumo],
-      60: [8000, ko_mantsumo],
-      70: [8000, ko_mantsumo],
-      80: [8000, ko_mantsumo],
-      90: [8000, ko_mantsumo],
-      100: [8000, ko_mantsumo],
-      110: [8000, ko_mantsumo],
+      40: [8000, KO_MANTSUMO],
+      50: [8000, KO_MANTSUMO],
+      60: [8000, KO_MANTSUMO],
+      70: [8000, KO_MANTSUMO],
+      80: [8000, KO_MANTSUMO],
+      90: [8000, KO_MANTSUMO],
+      100: [8000, KO_MANTSUMO],
+      110: [8000, KO_MANTSUMO],
     },
-    5: [8000, ko_mantsumo],
-    6: [12000, ko_hanetsumo],
-    7: [12000, ko_hanetsumo],
-    8: [16000, ko_baitsumo],
-    9: [16000, ko_baitsumo],
-    10: [16000, ko_baitsumo],
-    11: [24000, ko_3baitsumo],
-    12: [24000, ko_3baitsumo],
-    13: [32000, ko_yakutsumo],
+    5: [8000, KO_MANTSUMO],
+    6: [12000, KO_HANETSUMO],
+    7: [12000, KO_HANETSUMO],
+    8: [16000, KO_BAITSUMO],
+    9: [16000, KO_BAITSUMO],
+    10: [16000, KO_BAITSUMO],
+    11: [24000, KO_3BAITSUMO],
+    12: [24000, KO_3BAITSUMO],
+    13: [32000, KO_YAKUTSUMO],
   },
 };
 
@@ -143,14 +143,16 @@ let oyako;
 let fu_su;
 let kan_fu;
 let han_su;
-let getPoint;
-let tsumoAgari;
+let point;
+let tsumo_agari;
 
 const q1 = document.getElementById("q1");
 const q2 = document.getElementById("q2");
 const q3 = document.getElementById("q3");
 const q4 = document.getElementById("q4");
 const q5 = document.getElementById("q5");
+
+const message = document.getElementById("message");
 
 // カン
 let ankan1Count = 0;
@@ -163,23 +165,26 @@ const calcKansTotal = function () {
   kansTotal = ankan1Count + ankan2Count + minkan1Count + minkan2Count;
   return kansTotal;
 };
-const han1Cancel = function () {
-  // 飜数：1飜→2飜に変更する
-  if (document.getElementById("1han").checked === true) {
-    document.getElementById("2han").checked = true;
-  }
-  han_su = 2;
-};
+
+// 飜数：1飜→2飜に変更する
+// const cancel1han = function () {
+//   if (document.getElementById("1han").checked) {
+//     document.getElementById("2han").checked = true;
+//   }
+// };
+
+// クラス"disabled"を付加
 const addDisabled = function (x) {
-  // クラス"disabled"を付加
   x.classList.add("disabled");
 };
+
+// クラス"disabled"を除去
 const removeDisabled = function (y) {
-  // クラス"disabled"を除去
   y.classList.remove("disabled");
 };
+
+// 選択されていない選択肢のチェックを外す
 const uncheckDisabled = function () {
-  // 選択されていない選択肢のチェックを外す
   const disabled = document.querySelectorAll(".disabled input:checked");
 
   for (let i = 0; i < disabled.length; i++) {
@@ -193,36 +198,33 @@ const undefineFusu = function () {
 
 const hideScore = function () {
   document.getElementById("result_display").style.display = "none";
-}
+};
 
 const showScore = function () {
   // 符数取得
-  if (document.getElementById("q1-yes").checked === true) {
-    if (document.getElementById("q2-yes").checked === true) {
+  if (document.getElementById("q1-yes").checked) {
+    if (document.getElementById("q2-yes").checked) {
       fu_su = 40;
     }
-    if (document.getElementById("q2-no").checked === true) {
+    if (document.getElementById("q2-no").checked) {
       fu_su = 30;
     }
   } else {
-    // q1-no
-    if (document.getElementById("q3-yes").checked === true) {
+    if (document.getElementById("q3-yes").checked) {
       fu_su = 25;
     } else {
-      // q3-no
-      if (document.getElementById("q4-yes").checked === true) {
-        if (document.getElementById("q5-yes").checked === true) {
+      if (document.getElementById("q4-yes").checked) {
+        if (document.getElementById("q5-yes").checked) {
           fu_su = 20;
         }
-        if (document.getElementById("q5-no").checked === true) {
+        if (document.getElementById("q5-no").checked) {
           fu_su = 30;
         }
       } else {
-        // q4-no
-        if (document.getElementById("q5-yes").checked === true) {
+        if (document.getElementById("q5-yes").checked) {
           fu_su = 30;
         }
-        if (document.getElementById("q5-no").checked === true) {
+        if (document.getElementById("q5-no").checked) {
           fu_su = 40;
         }
       }
@@ -231,14 +233,15 @@ const showScore = function () {
 
   // 符数が確定していなければキャンセル
   if (fu_su === undefined) {
+    hideScore();
     return false;
   }
 
   // カンによる符をカウント
   // 平和か七対子の場合カンは起こりえないので槓子のカウントをしない
   if (
-    !document.getElementById("q3-yes").checked === true &&
-    !document.getElementById("q4-yes").checked === true
+    !document.getElementById("q3-yes").checked &&
+    !document.getElementById("q4-yes").checked
   ) {
     kan_fu =
       ankan1Count * 30 +
@@ -263,40 +266,48 @@ const showScore = function () {
     han_su = 13;
   }
 
+  // ありえないアガリ
   // 20符1飜 or 25符1飜の場合
   if (han_su == 1) {
-    if (fu_su === 20) {
-      alert("20符1飜のアガりはありません");
-      han1Cancel();
-      han_su = 2;
+    if (fu_su == 20) {
+      message.innerHTML = "このアガリの1飜はありません<br>(平和+ツモは2翻)";
+      hideScore();
+      return false;
     }
-    if (fu_su === 25) {
-      alert("25符1飜のアガりはありません");
-      han1Cancel();
-      han_su = 2;
+    if (fu_su == 25) {
+      message.innerHTML = "このアガリの1飜はありません<br>(七対子は2翻)";
+      hideScore();
+      return false;
+    }
+    // 対々和・三暗刻は2翻
+    if (document.getElementById("q2-yes").checked) {
+      message.innerHTML =
+        "このアガリの1飜はありません<br>（対々和・三暗刻は2翻のため）";
+      hideScore();
+      return false;
     }
   }
 
-  if (document.getElementById("oya").checked === true) {
+  if (document.getElementById("oya").checked) {
     oyako = "oya";
   } else {
     oyako = "ko";
   }
 
   if (han_su >= 5) {
-    getPoint = pointsArray[oyako][han_su][0];
-    tsumoAgari = pointsArray[oyako][han_su][1];
+    point = pointsArray[oyako][han_su][0];
+    tsumo_agari = pointsArray[oyako][han_su][1];
   } else {
-    getPoint = pointsArray[oyako][han_su][fu_su][0];
-    tsumoAgari = pointsArray[oyako][han_su][fu_su][1];
+    point = pointsArray[oyako][han_su][fu_su][0];
+    tsumo_agari = pointsArray[oyako][han_su][fu_su][1];
   }
 
   // 結果表示
+  message.innerHTML = "";
   document.getElementById("fu_result").innerHTML = fu_su;
   document.getElementById("han_result").innerHTML = han_su;
-  document.getElementById("ten_result").innerHTML = getPoint;
-  document.getElementById("tsumo_result").innerHTML = tsumoAgari;
-
+  document.getElementById("ten_result").innerHTML = point;
+  document.getElementById("tsumo_result").innerHTML = tsumo_agari;
   document.getElementById("result_display").style.display = "block";
 };
 
@@ -305,32 +316,22 @@ const choices = document.querySelectorAll("input");
 
 for (let i = 0; i < choices.length; i++) {
   choices[i].addEventListener("change", function () {
-    if (
-      document.getElementById("q4-yes").checked === true &&
-      document.getElementById("q5-yes").checked === true
-    ) {
-      han1Cancel();
-    }
-    if (document.getElementById("q3-no").checked === true) {
+    if (document.getElementById("q3-no").checked) {
       removeDisabled(q4);
       removeDisabled(q5);
       undefineFusu();
     }
-    if (document.getElementById("q3-yes").checked === true) {
+    if (document.getElementById("q3-yes").checked) {
       addDisabled(q4);
       addDisabled(q5);
       uncheckDisabled();
-      han1Cancel();
     }
-    if (document.getElementById("q2-yes").checked === true) {
-      han1Cancel();
-    }
-    if (document.getElementById("q1-no").checked === true) {
+    if (document.getElementById("q1-no").checked) {
       removeDisabled(q3);
       addDisabled(q2);
       undefineFusu();
     }
-    if (document.getElementById("q1-yes").checked === true) {
+    if (document.getElementById("q1-yes").checked) {
       removeDisabled(q2);
       addDisabled(q3);
       addDisabled(q4);
@@ -340,10 +341,6 @@ for (let i = 0; i < choices.length; i++) {
     }
 
     showScore();
-
-    if (fu_su === undefined) {
-      hideScore();
-    }
   });
 }
 
@@ -414,7 +411,7 @@ for (let i = 0; i < kanZero.length; i++) {
 
 // リセット
 document.getElementById("reset").addEventListener("click", function () {
-  // ラジオボタン解除
+  // チェック解除
   const radioCheck = document.querySelectorAll("input:checked");
 
   for (let i = 0; i < radioCheck.length; i++) {
@@ -428,14 +425,12 @@ document.getElementById("reset").addEventListener("click", function () {
     pointDisplay[i].innerHTML = "";
   }
 
-  hideScore();
-
   // 初期値に戻す
   document.getElementById("1han").checked = true;
   han_su = 1;
   fu_su = undefined;
-  getPoint = undefined;
-  tsumoAgari = undefined;
+  point = undefined;
+  tsumo_agari = undefined;
   document.getElementById("ko").checked = true;
 
   // 槓を0に戻す
@@ -457,6 +452,10 @@ document.getElementById("reset").addEventListener("click", function () {
 
   // トップへ戻る
   scrollTo(0, 0);
+
+  hideScore();
+
+  message.innerHTML = "";
 });
 
 // ページトップへ

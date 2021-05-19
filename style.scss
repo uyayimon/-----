@@ -186,7 +186,7 @@ input[type="radio"] {
 // 結果
 #result {
   width: 100%;
-  padding: 0.5em;
+  padding: 1em;
   background-color: #f7c569;
   position: fixed;
   bottom: 0;
@@ -195,8 +195,12 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
 }
-#result_display {
+#message {
+  font-size: 0.9em;
   margin-left: auto;
+  max-width: 50%;
+}
+#result_display {
   display: none;
   p {
     margin: 0;
