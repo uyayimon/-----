@@ -23,7 +23,7 @@ label {
   max-width: 100px;
   font-size: 1.5em;
   margin: 0.1em;
-  // padding: 0.3em 0;
+  padding: 0.3em 0;
 }
 input[type="radio"] {
   display: none;
@@ -205,7 +205,7 @@ footer {
 
 }
 #result {
-  padding: 0.3em;
+  padding: 0.5em;
   background-color: #f7c569;
   display: flex;
   justify-content: space-between;
