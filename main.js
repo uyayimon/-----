@@ -137,7 +137,7 @@ const pointsArray = {
     12: [24000, KO_3BAITSUMO],
     13: [32000, KO_YAKUTSUMO],
   },
-};
+}
 
 let oyako;
 let fu_su;
@@ -162,36 +162,51 @@ const message = document.getElementById("message");
 
 const calcKansTotal = function () {
   return ankan1Count + ankan2Count + minkan1Count + minkan2Count;
-};
+}
 
-const addDisabledClass = function () {
+const addClassDisabled = function () {
   for (let i = 0; i < arguments.length; ++i) {
     arguments[i].classList.add("disabled");
   }
-};
+}
 
-const removeDisabledClass = function () {
+const removeClassDisabled = function () {
   for (let i = 0; i < arguments.length; ++i) {
     arguments[i].classList.remove("disabled");
   }
-};
+}
 
-// 選択されていない選択肢のチェックを外す
 const uncheckDisabledInput = function () {
   const disabled = document.querySelectorAll(".disabled input:checked");
 
   for (let i = 0; i < disabled.length; i++) {
     disabled[i].checked = false;
   }
-};
+}
 
 const undefineFusu = function () {
   fu_su = undefined;
-};
+}
+
+const displayKansCount = function () {
+  document.getElementById("ankan1").innerHTML = ankan1Count;
+  document.getElementById("ankan2").innerHTML = ankan2Count;
+  document.getElementById("minkan1").innerHTML = minkan1Count;
+  document.getElementById("minkan2").innerHTML = minkan2Count;
+}
+
+const showScore = function () {
+  message.innerHTML = "";
+  document.getElementById("fu_result").innerHTML = fu_su;
+  document.getElementById("han_result").innerHTML = han_su;
+  document.getElementById("ten_result").innerHTML = point;
+  document.getElementById("tsumo_result").innerHTML = tsumo_agari;
+  document.getElementById("result_display").style.display = "block";
+}
 
 const hideScore = function () {
   document.getElementById("result_display").style.display = "none";
-};
+}
 
 const calcScore = function () {
   // 符数取得
@@ -213,13 +228,12 @@ const calcScore = function () {
     }
   }
 
-  // 符数が確定していなければキャンセル
   if (fu_su === undefined) {
     hideScore();
     return;
   }
 
-  // カンによる符をカウント
+  // カンによる符の追加
   // 平和か七対子の場合カンは起こりえないので槓子のカウントをしない
   if (
     !document.getElementById("q3-yes").checked &&
@@ -250,19 +264,8 @@ const calcScore = function () {
 
   // ありえないアガリ
   if (han_su == 1) {
-    if (fu_su == 20) {
-      message.innerHTML = "このアガリの1飜はありません<br>(平和+ツモは2翻)";
-      hideScore();
-      return;
-    }
-    if (fu_su == 25) {
-      message.innerHTML = "このアガリの1飜はありません<br>(七対子は2翻)";
-      hideScore();
-      return;
-    }
-    if (document.getElementById("q2-yes").checked) {
-      message.innerHTML =
-        "このアガリの1飜はありません<br>（対々和・三暗刻は2翻のため）";
+    if (fu_su == 20 || fu_su == 25 || document.getElementById("q2-yes").checked) {
+      message.innerHTML = "このアガリの1飜はありません";
       hideScore();
       return;
     }
@@ -282,13 +285,8 @@ const calcScore = function () {
     tsumo_agari = pointsArray[oyako][han_su][fu_su][1];
   }
 
-  message.innerHTML = "";
-  document.getElementById("fu_result").innerHTML = fu_su;
-  document.getElementById("han_result").innerHTML = han_su;
-  document.getElementById("ten_result").innerHTML = point;
-  document.getElementById("tsumo_result").innerHTML = tsumo_agari;
-  document.getElementById("result_display").style.display = "block";
-};
+  showScore();
+}
 
 
 const radioButtons = document.querySelectorAll("input");
@@ -296,21 +294,21 @@ const radioButtons = document.querySelectorAll("input");
 for (let i = 0; i < radioButtons.length; i++) {
   radioButtons[i].addEventListener("change", function () {
     if (document.getElementById("q3-no").checked) {
-      removeDisabledClass(q4, q5);
+      removeClassDisabled(q4, q5);
       undefineFusu();
     }
     if (document.getElementById("q3-yes").checked) {
-      addDisabledClass(q4, q5);
+      addClassDisabled(q4, q5);
       uncheckDisabledInput();
     }
     if (document.getElementById("q1-no").checked) {
-      removeDisabledClass(q3);
-      addDisabledClass(q2);
+      removeClassDisabled(q3);
+      addClassDisabled(q2);
       undefineFusu();
     }
     if (document.getElementById("q1-yes").checked) {
-      removeDisabledClass(q2);
-      addDisabledClass(q3, q4, q5);
+      removeClassDisabled(q2);
+      addClassDisabled(q3, q4, q5);
       uncheckDisabledInput();
       undefineFusu();
     }
@@ -319,7 +317,6 @@ for (let i = 0; i < radioButtons.length; i++) {
   });
 }
 
-// カンをカウントした時
 const kanPlus = document.querySelectorAll(".count-box");
 
 for (let i = 0; i < kanPlus.length; i++) {
@@ -328,26 +325,20 @@ for (let i = 0; i < kanPlus.length; i++) {
 
     if (calcKansTotal() < 4) {
       switch (plusID) {
-        case "ankan1+":
-          ankan1Count++;
-          document.getElementById("ankan1").innerHTML = ankan1Count;
+        case "ankan1+": ankan1Count++;
           break;
-        case "ankan2+":
-          ankan2Count++;
-          document.getElementById("ankan2").innerHTML = ankan2Count;
+        case "ankan2+": ankan2Count++;
           break;
-        case "minkan1+":
-          minkan1Count++;
-          document.getElementById("minkan1").innerHTML = minkan1Count;
+        case "minkan1+": minkan1Count++;
           break;
-        case "minkan2+":
-          minkan2Count++;
-          document.getElementById("minkan2").innerHTML = minkan2Count;
+        case "minkan2+": minkan2Count++;
           break;
         default:
           break;
       }
     }
+
+    displayKansCount();
     calcScore();
   });
 }
@@ -356,29 +347,23 @@ const kanZero = document.querySelectorAll(".zero");
 
 for (let i = 0; i < kanZero.length; i++) {
   kanZero[i].addEventListener("click", function (event) {
-    event.stopPropagation(); // プラスの挙動が起こらないようにする
+    event.stopPropagation();  // プラスされないようにする
     const zeroID = this.id;
 
     switch (zeroID) {
-      case "ankan1-":
-        ankan1Count = 0;
-        document.getElementById("ankan1").innerHTML = ankan1Count;
+      case "ankan1-": ankan1Count = 0;
         break;
-      case "ankan2-":
-        ankan2Count = 0;
-        document.getElementById("ankan2").innerHTML = ankan2Count;
+      case "ankan2-": ankan2Count = 0;
         break;
-      case "minkan1-":
-        minkan1Count = 0;
-        document.getElementById("minkan1").innerHTML = minkan1Count;
+      case "minkan1-": minkan1Count = 0;
         break;
-      case "minkan2-":
-        minkan2Count = 0;
-        document.getElementById("minkan2").innerHTML = minkan2Count;
+      case "minkan2-": minkan2Count = 0;
         break;
       default:
         break;
     }
+
+    displayKansCount();
     calcScore();
   });
 }
@@ -407,15 +392,10 @@ document.getElementById("reset").addEventListener("click", function () {
   minkan1Count = 0;
   minkan2Count = 0;
 
-  const kansCountValue = document.querySelectorAll(".count-value");
-  for (let i = 0; i < kansCountValue.length; i++) {
-    kansCountValue[i].innerHTML = "0";
-  }
+  displayKansCount();
 
-  // 質問のチェック状態の初期化
-  addDisabledClass(q2, q3, q4, q5);
+  addClassDisabled(q2, q3, q4, q5);
 
-  // トップへ戻る
   scrollTo(0, 0);
 
   hideScore();
@@ -423,7 +403,7 @@ document.getElementById("reset").addEventListener("click", function () {
   message.innerHTML = "";
 });
 
-// ページトップへ
+
 document.getElementById("to-top").addEventListener("click", function () {
   scrollTo(0, 0);
 });
