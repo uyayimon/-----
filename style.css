@@ -5,15 +5,15 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 15em;
+  margin-bottom: 60vh;
 }
 
 section {
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 header h1 {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 label {
@@ -21,11 +21,10 @@ label {
   cursor: pointer;
   border: 1px solid #666;
   border-radius: 0.5em;
-  width: 4.5em;
-  max-width: 40%;
+  width: 5em;
+  max-width: 100px;
   font-size: 1.5em;
   margin: 0.1em;
-  padding: 0.3em 0;
 }
 
 input[type="radio"] {
@@ -43,9 +42,136 @@ input[type="radio"]:checked + label {
 
 .radioButtons {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.question {
+  margin-top: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.question p {
+  font-size: 1.2em;
+  width: 100%;
+  margin: 0;
+  background-color: lemonchiffon;
+}
+
+.question .yes {
+  color: #f83da4;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.question .no {
+  color: #6acec9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.question input[type="radio"]:checked + label.yes {
+  background-color: #faa9b7;
+}
+
+.question input[type="radio"]:checked + label.no {
+  background-color: lightseagreen;
+}
+
+.kan-count {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 1.3em;
+}
+
+.count-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 1px solid #666;
+  margin: 0.1em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+}
+
+.count-box:hover {
+  cursor: pointer;
+}
+
+.count-box p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.count-box span {
+  font-weight: bold;
+}
+
+.tile {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.tile img {
+  width: 19px;
+  height: 26px;
+}
+
+.tile .yoko {
+  width: 26px;
+  height: 19px;
+}
+
+.tile .kakan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.count-value {
+  font-size: 1.5em;
+}
+
+.zero {
+  font-size: 0.8em;
+  border: 1px solid #666;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 0.5em;
+  padding: 0.2em;
+}
+
+.zero:hover {
+  background-color: lightgrey;
+}
+
+#han-wrapper label {
+  width: 20%;
 }
 
 #over5label {
@@ -72,138 +198,15 @@ input[type="radio"]:checked + label {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 0;
   padding: 0;
   overflow: hidden;
   opacity: 0;
   font-size: 0.8em;
-}
-
-.question {
-  margin-top: 0.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.question p {
-  font-size: 1.2em;
-  width: 100%;
-  margin: 0;
-  background-color: lemonchiffon;
-}
-
-.question .yes {
-  color: #f83da4;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.question .no {
-  color: #6acec9;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.question input[type="radio"]:checked + label.yes {
-  background-color: #faa9b7;
-}
-
-.question input[type="radio"]:checked + label.no {
-  background-color: lightseagreen;
-}
-
-.kan-count {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 1.3em;
-}
-
-.count-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  border: 1px solid #666;
-  margin: 0.1em;
-  padding: 0.5em;
-  border-radius: 0.3em;
-}
-
-.count-box:hover {
-  cursor: pointer;
-}
-
-.count-box p {
-  margin: 0;
-  white-space: nowrap;
-}
-
-.count-box span {
-  font-weight: bold;
-}
-
-.tile {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-}
-
-.tile img {
-  width: 19px;
-  height: 26px;
-}
-
-.tile .yoko {
-  width: 26px;
-  height: 19px;
-}
-
-.tile .kakan {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.count-value {
-  font-size: 1.5em;
-}
-
-.zero {
-  font-size: 0.8em;
-  border: 1px solid #666;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border-radius: 0.5em;
-  padding: 0.2em;
-}
-
-.zero:hover {
-  background-color: lightgrey;
 }
 
 .caption {
@@ -217,10 +220,10 @@ input[type="radio"]:checked + label {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .pointtables table {
@@ -253,26 +256,32 @@ input[type="radio"]:checked + label {
   background-color: #eeeeee;
 }
 
-#result {
+footer {
+  -webkit-box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   width: 100%;
-  padding: 1em;
-  background-color: #f7c569;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 1;
+}
+
+#result {
+  padding: 0.3em;
+  background-color: #f7c569;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #message {
-  font-size: 0.9em;
+  font-size: small;
   margin-left: auto;
-  max-width: 50%;
+  max-width: 55%;
 }
 
 #result_display {
@@ -329,7 +338,7 @@ button#reset {
   border-top: solid 2px;
   border-right: solid 2px;
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+          transform: rotate(-45deg);
   position: absolute;
   top: 10px;
   bottom: 0;
@@ -348,6 +357,9 @@ button#reset {
 }
 
 @media (min-width: 600px) {
+  section {
+    margin-top: 1em;
+  }
   .chapter {
     font-size: 1.5em;
   }
@@ -358,11 +370,11 @@ button#reset {
   .question {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .question p {
     font-size: 1em;
@@ -374,10 +386,10 @@ button#reset {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 1em;
   }
   .kan-count .two-boxes {
@@ -386,14 +398,14 @@ button#reset {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .count-box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
   }
   .inner-box {

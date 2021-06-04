@@ -4,14 +4,14 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 15em;
+  margin-bottom: 60vh;
 }
 section {
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 header {
   h1 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 label {
@@ -19,11 +19,11 @@ label {
   cursor: pointer;
   border: 1px solid #666;
   border-radius: 0.5em;
-  width: 4.5em;
-  max-width: 40%;
+  width: 5em;
+  max-width: 100px;
   font-size: 1.5em;
   margin: 0.1em;
-  padding: 0.3em 0;
+  // padding: 0.3em 0;
 }
 input[type="radio"] {
   display: none;
@@ -37,32 +37,6 @@ input[type="radio"] {
 }
 .radioButtons {
   user-select: none;
-}
-
-#over5label {
-  font-size: 1em;
-  opacity: 0.7;
-  cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
-}
-#over5input {
-  display: none;
-}
-#over5input:checked ~ .hidden_show {
-  height: auto;
-  opacity: 1;
-}
-.hidden_show {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  font-size: 0.8em;
 }
 
 .question {
@@ -147,6 +121,42 @@ input[type="radio"] {
   }
 }
 
+// #oyaOrKo-wrapper, #han-wrapper {
+
+// }
+#han-wrapper {
+  label {
+    width: 20%;
+
+  }
+}
+#over5label {
+  font-size: 1em;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+#over5input {
+  display: none;
+}
+#over5input:checked ~ .hidden_show {
+  height: auto;
+  opacity: 1;
+}
+.hidden_show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0.8em;
+}
+
+
 //表
 .caption {
   font-weight: bold;
@@ -183,22 +193,27 @@ input[type="radio"] {
   background-color: #eeeeee;
 }
 
-// 結果
-#result {
+// 固定フッター
+footer {
+  box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   width: 100%;
-  padding: 1em;
-  background-color: #f7c569;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 1;
+
+}
+#result {
+  padding: 0.3em;
+  background-color: #f7c569;
   display: flex;
   justify-content: space-between;
 }
 #message {
-  font-size: 0.9em;
+  font-size: small;
   margin-left: auto;
-  max-width: 50%;
+  max-width: 55%;
 }
 #result_display {
   display: none;
@@ -265,6 +280,9 @@ button#reset {
 }
 
 @media (min-width: 600px) {
+  section {
+    margin-top: 1em;
+  }
   .chapter {
     font-size: 1.5em;
   }
