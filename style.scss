@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 60vh;
+  margin-bottom: 50vh;
 }
 section {
   margin-top: 0.5em;
@@ -13,7 +13,9 @@ header {
   h1 {
     font-size: 1.3em;
   }
+  margin-bottom: 1em;
 }
+
 label {
   display: inline-block;
   cursor: pointer;
@@ -127,7 +129,6 @@ input[type="radio"] {
 #han-wrapper {
   label {
     width: 20%;
-
   }
 }
 #over5label {
@@ -202,10 +203,10 @@ footer {
   bottom: 0;
   left: 0;
   z-index: 1;
-
 }
+
 #result {
-  padding: 0.5em;
+  padding: 1em;
   background-color: #f7c569;
   display: flex;
   justify-content: space-between;
@@ -224,15 +225,15 @@ footer {
 button#reset {
   border-radius: 1em;
   height: 4em;
-  margin: auto 1em auto auto;
+  margin: auto 0.5em auto auto;
   font-size: 0.7em;
 }
 #ten_result {
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 #to-top {
-  margin: auto 1em;
+  margin: auto 0.5em;
   opacity: 0.7;
   p {
     margin: 0;
