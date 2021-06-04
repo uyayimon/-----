@@ -64,6 +64,7 @@ input[type="radio"]:checked + label {
 }
 
 .question p {
+  padding: 0.3em 0;
   font-size: 1.2em;
   width: 100%;
   margin: 0;
@@ -284,9 +285,10 @@ footer {
 }
 
 #message {
-  font-size: small;
+  font-size: 0.9em;
   margin-left: auto;
   max-width: 55%;
+  margin: 0;
 }
 
 #result_display {
@@ -382,6 +384,7 @@ button#reset {
             justify-content: center;
   }
   .question p {
+    padding: 0;
     font-size: 1em;
     width: 40%;
     line-height: 2em;
