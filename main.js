@@ -202,28 +202,33 @@ const showScore = function () {
   document.getElementById("ten_result").innerHTML = point;
   document.getElementById("tsumo_result").innerHTML = tsumo_agari;
   document.getElementById("result_display").style.display = "block";
+  document.getElementById("result").style.display = "flex";
 }
 
 const hideScore = function () {
-  document.getElementById("result_display").style.display = "none";
+  document.getElementById("result").style.display = "none";
+}
+
+const isChecked = function (optionId) {
+  return document.getElementById(optionId).checked
 }
 
 const calcScore = function () {
   // 符数取得
-  if (document.getElementById("q1-yes").checked) {
-    if (document.getElementById("q2-yes").checked) fu_su = 40;
-    if (document.getElementById("q2-no").checked) fu_su = 30;
+  if (isChecked("q1-yes")) {
+    if (isChecked("q2-yes")) fu_su = 40;
+    if (isChecked("q2-no")) fu_su = 30;
   }
   else {
-    if (document.getElementById("q3-yes").checked) fu_su = 25;
+    if (isChecked("q3-yes")) fu_su = 25;
     else {
-      if (document.getElementById("q4-yes").checked) {
-        if (document.getElementById("q5-yes").checked) fu_su = 20;
-        if (document.getElementById("q5-no").checked) fu_su = 30;
+      if (isChecked("q4-yes")) {
+        if (isChecked("q5-yes")) fu_su = 20;
+        if (isChecked("q5-no")) fu_su = 30;
       }
-      else {
-        if (document.getElementById("q5-yes").checked) fu_su = 30;
-        if (document.getElementById("q5-no").checked) fu_su = 40;
+      if (isChecked("q4-no")) {
+        if (isChecked("q5-yes")) fu_su = 30;
+        if (isChecked("q5-no")) fu_su = 40;
       }
     }
   }
@@ -235,10 +240,7 @@ const calcScore = function () {
 
   // カンによる符の追加
   // 平和か七対子の場合カンは起こりえないので槓子のカウントをしない
-  if (
-    !document.getElementById("q3-yes").checked &&
-    !document.getElementById("q4-yes").checked
-  ) {
+  if (!isChecked("q3-yes") && !isChecked("q4-yes")) {
     kan_fu =
       ankan1Count * 30 +
       ankan2Count * 20 +
@@ -264,14 +266,15 @@ const calcScore = function () {
 
   // ありえないアガリ
   if (han_su == 1) {
-    if (fu_su == 20 || fu_su == 25 || document.getElementById("q2-yes").checked) {
+    if (fu_su == 20 || fu_su == 25 || isChecked("q2-yes")) {
       message.innerHTML = "このアガリの1飜はありません";
-      hideScore();
+      document.getElementById("result_display").style.display = "none";
+      document.getElementById("result").style.display = "flex";
       return;
     }
   }
 
-  if (document.getElementById("oya").checked) {
+  if (isChecked("oya")) {
     oyako = "oya";
   } else {
     oyako = "ko";
@@ -293,20 +296,20 @@ const radioButtons = document.querySelectorAll("input");
 
 for (let i = 0; i < radioButtons.length; i++) {
   radioButtons[i].addEventListener("change", function () {
-    if (document.getElementById("q3-no").checked) {
+    if (isChecked("q3-no")) {
       removeClassDisabled(q4, q5);
       undefineFusu();
     }
-    if (document.getElementById("q3-yes").checked) {
+    if (isChecked("q3-yes")) {
       addClassDisabled(q4, q5);
       uncheckDisabledInput();
     }
-    if (document.getElementById("q1-no").checked) {
+    if (isChecked("q1-no")) {
       removeClassDisabled(q3);
       addClassDisabled(q2);
       undefineFusu();
     }
-    if (document.getElementById("q1-yes").checked) {
+    if (isChecked("q1-yes")) {
       removeClassDisabled(q2);
       addClassDisabled(q3, q4, q5);
       uncheckDisabledInput();
