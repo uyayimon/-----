@@ -1,8 +1,6 @@
 const CACHE_NAME = 'mic-caches-v1';
 const urlsToCache = [
-  '/',
-  'style.css',
-  'main.js'
+  /uyayimon.github.io/,
 ];
 
 self.addEventListener('install', function (event) {
@@ -10,7 +8,7 @@ self.addEventListener('install', function (event) {
     caches
       .open(CACHE_NAME)
       .then(function (cache) {
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache.map(url => new Request(url, { credentials: 'same-origin' })));
       })
   );
 });
