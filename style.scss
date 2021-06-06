@@ -7,7 +7,7 @@ body {
   margin-bottom: 40vh;
 }
 section {
-  margin-top: 0.5em;
+  margin: 0.5em;
 }
 header {
   h1 {
@@ -123,12 +123,9 @@ input[type="radio"] {
   }
 }
 
-// #oyaOrKo-wrapper, #han-wrapper {
-
-// }
 #han-wrapper {
   label {
-    width: 20%;
+    width: 15%;
   }
 }
 #over5label {
@@ -207,6 +204,7 @@ footer {
 
 #result {
   padding: 0.5em;
+  margin: auto 0 0 0;
   background-color: #f7c569;
   display: none;
   justify-content: space-between;
@@ -278,6 +276,12 @@ button#reset {
 .disabled {
   opacity: 0.2;
   pointer-events: none;
+}
+.bold {
+  font-weight: bold;
+}
+.small {
+  font-size: 0.5em;
 }
 
 @media (min-width: 600px) {

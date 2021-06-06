@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="アバウトな麻雀の点数計算ツールです。少ない選択肢で大体の点数がすぐに出せます！"
+      content="初心者向けのアバウトな麻雀の点数計算ツールです。だいたいの点数がすぐに出せます！"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon-180x180">
+    <title>【麻雀】簡易点数計算</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="192x192" href="icon/icon-192x192.png">
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
-    <title>【初心者向け】麻雀の簡易点数計算</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
-      <h1>麻雀の簡易点数計算</h1>
+      <h1>【麻雀】簡易点数計算</h1>
       <p>
         <a href="about.html">このツールについて</a>
       </p>
@@ -509,62 +511,62 @@
 
         <section id="han-wrapper">
           <div class="radioButtons">
-            <div class="han">
+            <div class="han">飜数：
               <input type="radio" name="han" id="1han" value="1" checked /><label
                 for="1han"
-                >1飜</label
+                >1</label
               >
               <input type="radio" name="han" id="2han" value="2" /><label
                 for="2han"
-                >2飜</label
+                >2</label
               >
               <input type="radio" name="han" id="3han" value="3" /><label
                 for="3han"
-                >3飜</label
+                >3</label
               >
               <input type="radio" name="han" id="4han" value="4" /><label
                 for="4han"
-                >4飜</label
+                >4</label
               >
-              <label for="over5input" id="over5label">5飜～ ▼</label>
+              <label for="over5input" id="over5label">5～<br></label>
               <div class="hidden_box">
                 <input type="checkbox" id="over5input" />
                 <div class="hidden_show">
                   <input type="radio" name="han" id="5han" value="5" /><label
                     for="5han"
-                    >5飜</label
+                    >5</label
                   >
                   <input type="radio" name="han" id="6han" value="6" /><label
                     for="6han"
-                    >6飜</label
+                    >6</label
                   >
                   <input type="radio" name="han" id="7han" value="7" /><label
                     for="7han"
-                    >7飜</label
+                    >7</label
                   >
                   <input type="radio" name="han" id="8han" value="8" /><label
                     for="8han"
-                    >8飜</label
+                    >8</label
                   >
                   <input type="radio" name="han" id="9han" value="9" /><label
                     for="9han"
-                    >9飜</label
+                    >9</label
                   >
                   <input type="radio" name="han" id="10han" value="10" /><label
                     for="10han"
-                    >10飜</label
+                    >10</label
                   >
                   <input type="radio" name="han" id="11han" value="11" /><label
                     for="11han"
-                    >11飜</label
+                    >11</label
                   >
                   <input type="radio" name="han" id="12han" value="12" /><label
                     for="12han"
-                    >12飜</label
+                    >12</label
                   >
                   <input type="radio" name="han" id="13han" value="13" /><label
                     for="13han"
-                    >13飜～</label
+                    >13～</label
                   >
                 </div>
               </div>
@@ -573,9 +575,7 @@
         </section>
 
         <section id="result">
-          <p id="message">
-            8割くらいは合ってるよ！実際の計算と違うことがあるので気を付けてね！
-          </p>
+          <p id="message"></p>
           <div id="result_display">
             <p style="font-size: 0.8em">だいたい</p>
             <p>
@@ -594,5 +594,16 @@
     </main>
 
     <script src="main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service_worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
