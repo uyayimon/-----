@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 40vh;
+  margin-bottom: 20vh;
 }
 section {
   margin: 0.5em;
@@ -45,10 +45,9 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   p {
-    padding: 0.3em 0;
     font-size: 1.2em;
     width: 100%;
-    margin: 0;
+    margin: 0.3em;
     background-color: lemonchiffon;
   }
   .yes {
@@ -69,6 +68,16 @@ input[type="radio"] {
   }
 }
 
+#radioButtons {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE, Edge 対応 */
+  scrollbar-width: none; /* Firefox 対応 */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 対応 */
+  }
+}
+
 .kan-count {
   user-select: none;
   font-size: 1.3em;
@@ -77,13 +86,14 @@ input[type="radio"] {
   display: flex;
   justify-content: space-around;
   border: 1px solid #666;
-  margin: 0.1em;
+  margin: 0.3em;
   padding: 0.5em;
   border-radius: 0.3em;
   &:hover {
     cursor: pointer;
   }
   p {
+    font-size: 0.9em;
     margin: 0;
     white-space: nowrap;
   }
@@ -191,9 +201,10 @@ input[type="radio"] {
   background-color: #eeeeee;
 }
 
-// 固定フッター
-footer {
-  box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+
+// 固定
+#fixed_element {
+  box-shadow: 0 -3px 0  rgba(0,0,0,0.2);
   background-color: #fff;
   width: 100%;
   position: fixed;
@@ -208,6 +219,11 @@ footer {
   background-color: #f7c569;
   display: none;
   justify-content: space-between;
+  width: 100%;
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
+  // z-index: 1;
 }
 #message {
   font-size: 0.9em;

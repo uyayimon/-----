@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1000px;
-  margin-bottom: 40vh;
+  margin-bottom: 20vh;
 }
 
 section {
@@ -63,10 +63,9 @@ input[type="radio"]:checked + label {
 }
 
 .question p {
-  padding: 0.3em 0;
   font-size: 1.2em;
   width: 100%;
-  margin: 0;
+  margin: 0.3em;
   background-color: lemonchiffon;
 }
 
@@ -94,6 +93,20 @@ input[type="radio"]:checked + label {
   background-color: lightseagreen;
 }
 
+#radioButtons {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE, Edge 対応 */
+  scrollbar-width: none;
+  /* Firefox 対応 */
+}
+
+#radioButtons::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari 対応 */
+}
+
 .kan-count {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -109,7 +122,7 @@ input[type="radio"]:checked + label {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border: 1px solid #666;
-  margin: 0.1em;
+  margin: 0.3em;
   padding: 0.5em;
   border-radius: 0.3em;
 }
@@ -119,6 +132,7 @@ input[type="radio"]:checked + label {
 }
 
 .count-box p {
+  font-size: 0.9em;
   margin: 0;
   white-space: nowrap;
 }
@@ -261,9 +275,9 @@ input[type="radio"]:checked + label {
   background-color: #eeeeee;
 }
 
-footer {
-  -webkit-box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+#fixed_element {
+  -webkit-box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   width: 100%;
   position: fixed;
@@ -280,6 +294,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
 #message {

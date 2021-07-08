@@ -8,17 +8,28 @@
       content="初心者向けのアバウトな麻雀の点数計算ツールです。だいたいの点数がすぐに出せます！"
     />
     <title>【麻雀】簡易点数計算</title>
-    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      header {
+        display: none;
+      }
+    </style>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('service_worker.js').then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-          });
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("service_worker.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
         });
       }
     </script>
@@ -27,13 +38,9 @@
   <body>
     <header>
       <h1>【麻雀】簡易点数計算</h1>
-      <p>
-        <a href="about.html">このツールについて</a>
-      </p>
     </header>
 
     <main>
-
       <section id="questions-wrapper">
         <div class="question" id="q1">
           <p>ポンかチーしてる？</p>
@@ -152,7 +159,7 @@
                 </div>
               </div>
               <div class="inner-box">
-                <p>1組毎に <span>+30符</span></p>
+                <!-- <p>1組毎に <span>+30符</span></p> -->
                 <p><span class="count-value" id="ankan1">0</span> 組</p>
                 <p class="zero" id="ankan1-">0に戻す</p>
               </div>
@@ -190,7 +197,7 @@
                 </div>
               </div>
               <div class="inner-box">
-                <p>1組毎に <span>+20符</span></p>
+                <!-- <p>1組毎に <span>+20符</span></p> -->
                 <p><span class="count-value" id="ankan2">0</span> 組</p>
                 <p class="zero" id="ankan2-">0に戻す</p>
               </div>
@@ -235,7 +242,7 @@
                 </div>
               </div>
               <div class="inner-box">
-                <p>1組毎に <span>+20符</span></p>
+                <!-- <p>1組毎に <span>+20符</span></p> -->
                 <p><span class="count-value" id="minkan1">0</span> 組</p>
                 <p class="zero" id="minkan1-">0に戻す</p>
               </div>
@@ -278,7 +285,7 @@
                 </div>
               </div>
               <div class="inner-box">
-                <p>1組毎に <span>+10符</span></p>
+                <!-- <p>1組毎に <span>+10符</span></p> -->
                 <p><span class="count-value" id="minkan2">0</span> 組</p>
                 <p class="zero" id="minkan2-">0に戻す</p>
               </div>
@@ -288,12 +295,14 @@
       </section>
 
       <hr />
+      <p>
+        <a href="about.html">このツールについて</a>
+      </p>
+
+      <hr />
 
       <section id="pointtables-wrapper">
         <h1>点数表</h1>
-        <p>
-          正確な点数表です。<br />暗刻が多かったりカンがあると符が繰り上がる可能性があります。<br />麻雀に慣れてきたら正しい符計算も覚えてみましょう！
-        </p>
 
         <p class="caption">親の場合(カッコ内はツモの点数）</p>
         <div class="pointtables">
@@ -506,7 +515,71 @@
         </div>
       </section>
 
-      <footer>
+      <div id="fixed_element">
+        <section id="han-wrapper">
+          <div id="radioButtons">
+            飜数：
+            <input type="radio" name="han" id="1han" value="1" checked /><label
+              for="1han"
+              >1</label
+            >
+            <input type="radio" name="han" id="2han" value="2" /><label
+              for="2han"
+              >2</label
+            >
+            <input type="radio" name="han" id="3han" value="3" /><label
+              for="3han"
+              >3</label
+            >
+            <input type="radio" name="han" id="4han" value="4" /><label
+              for="4han"
+              >4</label
+            >
+            <label for="over5input" id="over5label">5～<br /></label>
+            <div class="hidden_box">
+              <input type="checkbox" id="over5input" />
+              <div class="hidden_show">
+                <input type="radio" name="han" id="5han" value="5" /><label
+                  for="5han"
+                  >5</label
+                >
+                <input type="radio" name="han" id="6han" value="6" /><label
+                  for="6han"
+                  >6</label
+                >
+                <input type="radio" name="han" id="7han" value="7" /><label
+                  for="7han"
+                  >7</label
+                >
+                <input type="radio" name="han" id="8han" value="8" /><label
+                  for="8han"
+                  >8</label
+                >
+                <input type="radio" name="han" id="9han" value="9" /><label
+                  for="9han"
+                  >9</label
+                >
+                <input type="radio" name="han" id="10han" value="10" /><label
+                  for="10han"
+                  >10</label
+                >
+                <input type="radio" name="han" id="11han" value="11" /><label
+                  for="11han"
+                  >11</label
+                >
+                <input type="radio" name="han" id="12han" value="12" /><label
+                  for="12han"
+                  >12</label
+                >
+                <input type="radio" name="han" id="13han" value="13" /><label
+                  for="13han"
+                  >13～</label
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr />
         <section id="oyaOrKo-wrapper">
           <div class="radioButtons">
             <input type="radio" name="oyaKo" id="oya" /><label for="oya"
@@ -517,90 +590,27 @@
             >
           </div>
         </section>
-        <hr>
 
-        <section id="han-wrapper">
-          <div class="radioButtons">
-            <div class="han">飜数：
-              <input type="radio" name="han" id="1han" value="1" checked /><label
-                for="1han"
-                >1</label
-              >
-              <input type="radio" name="han" id="2han" value="2" /><label
-                for="2han"
-                >2</label
-              >
-              <input type="radio" name="han" id="3han" value="3" /><label
-                for="3han"
-                >3</label
-              >
-              <input type="radio" name="han" id="4han" value="4" /><label
-                for="4han"
-                >4</label
-              >
-              <label for="over5input" id="over5label">5～<br></label>
-              <div class="hidden_box">
-                <input type="checkbox" id="over5input" />
-                <div class="hidden_show">
-                  <input type="radio" name="han" id="5han" value="5" /><label
-                    for="5han"
-                    >5</label
-                  >
-                  <input type="radio" name="han" id="6han" value="6" /><label
-                    for="6han"
-                    >6</label
-                  >
-                  <input type="radio" name="han" id="7han" value="7" /><label
-                    for="7han"
-                    >7</label
-                  >
-                  <input type="radio" name="han" id="8han" value="8" /><label
-                    for="8han"
-                    >8</label
-                  >
-                  <input type="radio" name="han" id="9han" value="9" /><label
-                    for="9han"
-                    >9</label
-                  >
-                  <input type="radio" name="han" id="10han" value="10" /><label
-                    for="10han"
-                    >10</label
-                  >
-                  <input type="radio" name="han" id="11han" value="11" /><label
-                    for="11han"
-                    >11</label
-                  >
-                  <input type="radio" name="han" id="12han" value="12" /><label
-                    for="12han"
-                    >12</label
-                  >
-                  <input type="radio" name="han" id="13han" value="13" /><label
-                    for="13han"
-                    >13～</label
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section id="result">
-          <p id="message"></p>
-          <div id="result_display">
-            <p style="font-size: 0.8em">だいたい</p>
-            <p>
-              <span id="fu_result">？</span> 符 <span id="han_result">1</span> 飜
-              ： <span id="ten_result">？</span> 点 <br />
-              <span id="tsumo_result"></span>
-            </p>
-          </div>
-          <button id="reset">リセット</button>
-          <div id="to-top">
-            <div class="arrow"></div>
-            <p>トップへ</p>
-          </div>
-        </section>
-      </footer>
+        <p id="message"></p>
+        <div id="result_display">
+          <p style="font-size: 0.8em">だいたい</p>
+          <p>
+            <span id="fu_result">？</span> 符 <span id="han_result">1</span> 飜
+            ： <span id="ten_result">？</span> 点 <br />
+            <span id="tsumo_result"></span>
+          </p>
+        </div>
+        <button id="reset">リセット</button>
+        <div id="to-top">
+          <div class="arrow"></div>
+          <p>トップへ</p>
+        </div>
+      </section>
+      </div>
+
+
     </main>
 
     <script src="main.js"></script>
