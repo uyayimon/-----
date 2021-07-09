@@ -204,26 +204,27 @@ input[type="radio"] {
 
 // 固定
 #fixed_element {
-  box-shadow: 0 -3px 0  rgba(0,0,0,0.2);
+  padding: 0.3em;
+  box-shadow: 0 2px 2px  rgba(0,0,0,0.2);
   background-color: #fff;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  position: sticky;
+  top: 0;
   left: 0;
   z-index: 1;
 }
 
 #result {
   padding: 0.5em;
-  margin: auto 0 0 0;
+  margin: auto;
   background-color: #f7c569;
   display: none;
   justify-content: space-between;
   width: 100%;
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  // z-index: 1;
+  max-width: 1000px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
 }
 #message {
   font-size: 0.9em;
@@ -247,7 +248,7 @@ button#reset {
   font-size: 1.4em;
 }
 #to-top {
-  margin: auto 0.5em;
+  margin: auto 1em;
   opacity: 0.7;
   p {
     margin: 0;
